@@ -1,0 +1,449 @@
+{
+  "expireDate": 1629672435735,
+  "languages": [
+    {
+      "code": "af",
+      "name": "Africâner"
+    },
+    {
+      "code": "sq",
+      "name": "Albanês"
+    },
+    {
+      "code": "de",
+      "name": "Alemão"
+    },
+    {
+      "code": "am",
+      "name": "Amárico"
+    },
+    {
+      "code": "ar",
+      "name": "Árabe"
+    },
+    {
+      "code": "hy",
+      "name": "Armênio"
+    },
+    {
+      "code": "az",
+      "name": "Azerbaijano"
+    },
+    {
+      "code": "eu",
+      "name": "Basco"
+    },
+    {
+      "code": "bn",
+      "name": "Bengali"
+    },
+    {
+      "code": "be",
+      "name": "Bielo-russo"
+    },
+    {
+      "code": "my",
+      "name": "Birmanês"
+    },
+    {
+      "code": "bs",
+      "name": "Bósnio"
+    },
+    {
+      "code": "bg",
+      "name": "Búlgaro"
+    },
+    {
+      "code": "kn",
+      "name": "Canarês"
+    },
+    {
+      "code": "ca",
+      "name": "Catalão"
+    },
+    {
+      "code": "kk",
+      "name": "Cazaque"
+    },
+    {
+      "code": "ceb",
+      "name": "Cebuano"
+    },
+    {
+      "code": "ny",
+      "name": "Chicheua"
+    },
+    {
+      "code": "zh-CN",
+      "name": "Chinês (simplificado)"
+    },
+    {
+      "code": "zh-TW",
+      "name": "Chinês (tradicional)"
+    },
+    {
+      "code": "sn",
+      "name": "Chona"
+    },
+    {
+      "code": "si",
+      "name": "Cingalês"
+    },
+    {
+      "code": "ko",
+      "name": "Coreano"
+    },
+    {
+      "code": "co",
+      "name": "Corso"
+    },
+    {
+      "code": "ht",
+      "name": "Crioulo haitiano"
+    },
+    {
+      "code": "hr",
+      "name": "Croata"
+    },
+    {
+      "code": "ku",
+      "name": "Curdo"
+    },
+    {
+      "code": "da",
+      "name": "Dinamarquês"
+    },
+    {
+      "code": "sk",
+      "name": "Eslovaco"
+    },
+    {
+      "code": "sl",
+      "name": "Esloveno"
+    },
+    {
+      "code": "es",
+      "name": "Espanhol"
+    },
+    {
+      "code": "eo",
+      "name": "Esperanto"
+    },
+    {
+      "code": "et",
+      "name": "Estoniano"
+    },
+    {
+      "code": "tl",
+      "name": "Filipino"
+    },
+    {
+      "code": "fi",
+      "name": "Finlandês"
+    },
+    {
+      "code": "fr",
+      "name": "Francês"
+    },
+    {
+      "code": "fy",
+      "name": "Frísio"
+    },
+    {
+      "code": "gd",
+      "name": "Gaélico escocês"
+    },
+    {
+      "code": "gl",
+      "name": "Galego"
+    },
+    {
+      "code": "cy",
+      "name": "Galês"
+    },
+    {
+      "code": "ka",
+      "name": "Georgiano"
+    },
+    {
+      "code": "el",
+      "name": "Grego"
+    },
+    {
+      "code": "gu",
+      "name": "Guzerate"
+    },
+    {
+      "code": "ha",
+      "name": "Hauçá"
+    },
+    {
+      "code": "haw",
+      "name": "Havaiano"
+    },
+    {
+      "code": "iw",
+      "name": "Hebraico"
+    },
+    {
+      "code": "hi",
+      "name": "Hindi"
+    },
+    {
+      "code": "hmn",
+      "name": "Hmong"
+    },
+    {
+      "code": "nl",
+      "name": "Holandês"
+    },
+    {
+      "code": "hu",
+      "name": "Húngaro"
+    },
+    {
+      "code": "ig",
+      "name": "Igbo"
+    },
+    {
+      "code": "yi",
+      "name": "Iídiche"
+    },
+    {
+      "code": "id",
+      "name": "Indonésio"
+    },
+    {
+      "code": "en",
+      "name": "Inglês"
+    },
+    {
+      "code": "yo",
+      "name": "Ioruba"
+    },
+    {
+      "code": "ga",
+      "name": "Irlandês"
+    },
+    {
+      "code": "is",
+      "name": "Islandês"
+    },
+    {
+      "code": "it",
+      "name": "Italiano"
+    },
+    {
+      "code": "ja",
+      "name": "Japonês"
+    },
+    {
+      "code": "jw",
+      "name": "Javanês"
+    },
+    {
+      "code": "km",
+      "name": "Khmer"
+    },
+    {
+      "code": "rw",
+      "name": "Kinyarwanda"
+    },
+    {
+      "code": "lo",
+      "name": "Laosiano"
+    },
+    {
+      "code": "la",
+      "name": "Latim"
+    },
+    {
+      "code": "lv",
+      "name": "Letão"
+    },
+    {
+      "code": "lt",
+      "name": "Lituano"
+    },
+    {
+      "code": "lb",
+      "name": "Luxemburguês"
+    },
+    {
+      "code": "mk",
+      "name": "Macedônio"
+    },
+    {
+      "code": "ml",
+      "name": "Malaiala"
+    },
+    {
+      "code": "ms",
+      "name": "Malaio"
+    },
+    {
+      "code": "mg",
+      "name": "Malgaxe"
+    },
+    {
+      "code": "mt",
+      "name": "Maltês"
+    },
+    {
+      "code": "mi",
+      "name": "Maori"
+    },
+    {
+      "code": "mr",
+      "name": "Marata"
+    },
+    {
+      "code": "mn",
+      "name": "Mongol"
+    },
+    {
+      "code": "ne",
+      "name": "Nepalês"
+    },
+    {
+      "code": "no",
+      "name": "Norueguês"
+    },
+    {
+      "code": "or",
+      "name": "Oriá"
+    },
+    {
+      "code": "ps",
+      "name": "Pachto"
+    },
+    {
+      "code": "fa",
+      "name": "Persa"
+    },
+    {
+      "code": "pl",
+      "name": "Polonês"
+    },
+    {
+      "code": "pt",
+      "name": "Português"
+    },
+    {
+      "code": "pa",
+      "name": "Punjabi"
+    },
+    {
+      "code": "ky",
+      "name": "Quirguiz"
+    },
+    {
+      "code": "ro",
+      "name": "Romeno"
+    },
+    {
+      "code": "ru",
+      "name": "Russo"
+    },
+    {
+      "code": "sm",
+      "name": "Samoano"
+    },
+    {
+      "code": "sr",
+      "name": "Sérvio"
+    },
+    {
+      "code": "st",
+      "name": "Sessoto"
+    },
+    {
+      "code": "sd",
+      "name": "Sindi"
+    },
+    {
+      "code": "so",
+      "name": "Somali"
+    },
+    {
+      "code": "sw",
+      "name": "Suaíle"
+    },
+    {
+      "code": "sv",
+      "name": "Sueco"
+    },
+    {
+      "code": "su",
+      "name": "Sundanês"
+    },
+    {
+      "code": "tg",
+      "name": "Tadjique"
+    },
+    {
+      "code": "th",
+      "name": "Tailandês"
+    },
+    {
+      "code": "ta",
+      "name": "Tâmil"
+    },
+    {
+      "code": "tt",
+      "name": "Tártaro"
+    },
+    {
+      "code": "cs",
+      "name": "Tcheco"
+    },
+    {
+      "code": "te",
+      "name": "Telugo"
+    },
+    {
+      "code": "tr",
+      "name": "Turco"
+    },
+    {
+      "code": "tk",
+      "name": "Turcomano"
+    },
+    {
+      "code": "uk",
+      "name": "Ucraniano"
+    },
+    {
+      "code": "ug",
+      "name": "Uigur"
+    },
+    {
+      "code": "ur",
+      "name": "Urdu"
+    },
+    {
+      "code": "uz",
+      "name": "Uzbeque"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamita"
+    },
+    {
+      "code": "xh",
+      "name": "Xhosa"
+    },
+    {
+      "code": "zu",
+      "name": "Zulu"
+    },
+    {
+      "code": "he",
+      "name": "Hebraico"
+    },
+    {
+      "code": "zh",
+      "name": "Chinês (simplificado)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "you-borderless-back-end",
+	"version": "0.0.0",
+	"license": "SEE LICENSE IN LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HMLarsen/YouBorderless-Back-End"
+	},
+	"main": "index.js",
+	"engines": {
+		"node": "14.x"
+	},
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"@google-cloud/speech": "^4.2.0",
+		"@google-cloud/translate": "^6.1.0",
+		"axios": "^0.21.1",
+		"chalk": "^4.1.0",
+		"cheerio": "^1.0.0-rc.5",
+		"cors": "^2.8.5",
+		"difflib": "^0.2.4",
+		"express": "^4.17.1",
+		"ffmpeg-static": "^4.2.8",
+		"node-record-lpcm16": "^1.0.1",
+		"route-cache": "^0.4.5",
+		"socket.io": "^4.0.0",
+		"youtube-dl-wrap": "^2.0.0",
+		"ytdl-core": "^4.5.0"
+	}
+}
