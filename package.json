@@ -17,7 +17,6 @@
 		"@google-cloud/speech": "^4.2.0",
 		"@google-cloud/translate": "^6.1.0",
 		"axios": "^0.21.1",
-		"bing-translate-api": "^1.1.1",
 		"chalk": "^4.1.0",
 		"cheerio": "^1.0.0-rc.5",
 		"cors": "^2.8.5",
@@ -27,8 +26,8 @@
 		"node-record-lpcm16": "^1.0.1",
 		"route-cache": "^0.4.5",
 		"socket.io": "^4.0.0",
-		"translatte": "^3.0.0",
 		"youtube-dl-wrap": "^2.0.0",
-		"ytdl-core": "^4.5.0"
+		"ytdl-core": "^4.5.0",
+		"ytsr": "^3.4.0"
 	}
 }

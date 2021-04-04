@@ -1,7 +1,5 @@
 const { TranslationServiceClient } = require('@google-cloud/translate');
-// const translatte = require('translatte');
-// const { translate } = require('bing-translate-api');
-const tr = require("googletrans").default;
+const tr = require('googletrans').default;
 const config = require('../../config.js');
 
 const translationClient = new TranslationServiceClient();
@@ -30,8 +28,6 @@ async function translateText(liveOptions, text) {
 }
 
 function translateFree(liveOptions, text) {
-	// return translatte(text, { to: liveOptions.liveToLanguage.code });
-	// return translate(text, null, liveOptions.liveToLanguage.code);
 	return tr(text, liveOptions.liveToLanguage.code);
 }
 
