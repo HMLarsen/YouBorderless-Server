@@ -1,5 +1,5 @@
 {
-  "expireDate": 1629672436606,
+  "expireDate": 1630731094954,
   "languages": [
     {
       "name": "Afrikaans (África do Sul)",
@@ -752,7 +752,9 @@
       "bcp": "fr-FR",
       "models": [
         "command_and_search",
-        "default"
+        "default",
+        "enhanced_phone_call",
+        "phone_call"
       ],
       "punctuation": true,
       "diarization": true,
@@ -991,6 +993,19 @@
       "punctuation": false,
       "diarization": false,
       "boost": true,
+      "confidence": false,
+      "profanityFilter": true
+    },
+    {
+      "name": "Cazaque (Cazaquistão)",
+      "bcp": "kk-KZ",
+      "models": [
+        "command_and_search",
+        "default"
+      ],
+      "punctuation": false,
+      "diarization": false,
+      "boost": false,
       "confidence": false,
       "profanityFilter": true
     },

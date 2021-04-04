@@ -13,6 +13,7 @@ console.log(`NODE_ENV=${config.NODE_ENV}`);
 console.log(`CORS_ORIGIN=${config.CORS_ORIGIN}`);
 
 // application routes
+app.use(express.json());
 configureRoutes(app);
 
 const server = app.listen(config.PORT);

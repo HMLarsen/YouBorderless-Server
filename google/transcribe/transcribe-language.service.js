@@ -1,12 +1,12 @@
 const fs = require('fs');
 const cheerio = require('cheerio');
-const { fetchData: httpFetchData } = require('../../http.service');
+const axios = require('axios');
 
 async function fetchData() {
 	// default language "pt" for the page, the reason is getting correctly the models parsed from page
 	// TODO language code by front-end... it will be necessary to change the code below... to retrieve models
 	const languagesUrl = 'https://cloud.google.com/speech-to-text/docs/languages?hl=pt';
-	return await httpFetchData(languagesUrl)
+	return await axios(languagesUrl)
 		.then(res => {
 			const html = res.data;
 			const $ = cheerio.load(html);
@@ -49,10 +49,12 @@ async function fetchData() {
 						break;
 
 					case 'Chamada telefônica':
+					case 'Chamada telefônica (Beta)':
 						language.models.push('phone_call');
 						break;
 
 					case 'Chamada telefônica aprimorada':
+					case 'Chamada telefônica aprimorada (Beta)':
 						language.models.push('enhanced_phone_call');
 						break;
 
