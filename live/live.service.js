@@ -1,32 +1,24 @@
 const ytdl = require('ytdl-core');
-const difflib = require('difflib');
 
 const { newBufferedLive, destroyBufferedLive } = require('../google/transcribe/infinite-transcribe.service');
 const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/transcribe/transcribe-language.service');
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');
-const { translateText } = require('../google/translation/translation.service');
+const { translateText, translateFree } = require('../google/translation/translation.service');
 
-let i = 0;
-let i2 = 0;
-let auxText = '';
 function startLive(liveOptions, consumer, translateConsumer, refreshDataConsumer) {
 	return newBufferedLive(liveOptions, async data => {
 		consumer(data);
-		// console.log(i++);
+		translateFree(liveOptions, auxText)
+			.then(res => {
+				data.text = res.text;
+				translateConsumer(data);
+			})
+			.catch(err => {
+				data.text = err;
+				translateConsumer(data);
+				console.error('[ERROR]: ' + err);
+			});
 
-		const s = new difflib.SequenceMatcher(null, data.text, auxText);
-		const ratio = s.ratio();
-		const ratioCompare = 0.98;
-
-		if (ratio >= ratioCompare) {
-			// console.log(ratio + ' maior igual a ' + ratioCompare + ' - ' + i2++);
-		} else {
-			auxText = data.text;
-			//translateConsumer(text);
-			//translateConsumer(await translateText(liveOptions, text));
-		}
-
-		//translateConsumer(await translateText(liveOptions, text));
 	}, refreshDataConsumer);
 }
 

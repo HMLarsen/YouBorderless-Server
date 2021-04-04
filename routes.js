@@ -6,6 +6,7 @@ const DEFAULT_CACHE_SECONDS = 7889400; // three months
 const cacheConfig = routeCache.cacheSeconds(DEFAULT_CACHE_SECONDS);
 
 function configureRoutes(app) {
+	// languages
 	app.get('/supported-transcribe-languages', cacheConfig, async (req, res) => {
 		try {
 			const languages = await getTranscribeSupportedLanguages();
@@ -24,6 +25,8 @@ function configureRoutes(app) {
 			res.send(err.message);
 		}
 	});
+
+	// video for living
 	app.get('/live-info/:videoId', async (req, res) => {
 		try {
 			const videoAvailable = await getVideoAvailableForLive(req.params.videoId);
@@ -37,6 +40,8 @@ function configureRoutes(app) {
 			res.send(err.message);
 		}
 	});
+
+	// live videos from subscriptions
 	app.post('/live-video-by-channels', (req, res) => {
 		try {
 			const channelsId = req.body.channelsId;
