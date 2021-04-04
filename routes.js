@@ -37,7 +37,7 @@ function configureRoutes(app) {
 			res.send(err.message);
 		}
 	});
-	app.post('/live-video-by-channels', async (req, res) => {
+	app.post('/live-video-by-channels', (req, res) => {
 		try {
 			const channelsId = req.body.channelsId;
 			const fetches = channelsId.map(channelId => axios.get(`https://www.youtube.com/channel/${channelId}/live`));
