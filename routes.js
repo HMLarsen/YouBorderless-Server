@@ -11,7 +11,7 @@ function configureRoutes(app) {
 	app.get('/supported-transcribe-languages', cacheConfig, async (req, res) => {
 		try {
 			const languages = await getTranscribeSupportedLanguages();
-			res.send(languages || []);
+			res.json(languages || []);
 		} catch (err) {
 			res.status(500);
 			res.send(err.message);
@@ -20,7 +20,7 @@ function configureRoutes(app) {
 	app.get('/supported-translation-languages', cacheConfig, async (req, res) => {
 		try {
 			const languages = await getTranslationSupportedLanguages();
-			res.send(languages || []);
+			res.json(languages || []);
 		} catch (err) {
 			res.status(500);
 			res.send(err.message);
@@ -58,7 +58,7 @@ function configureRoutes(app) {
 					videos.push(video);
 				});
 
-			res.send(videos);
+			res.json(videos);
 		} catch (err) {
 			res.status(500);
 			res.send(err.message);
@@ -70,7 +70,7 @@ function configureRoutes(app) {
 		try {
 			const videoAvailable = await getVideoAvailableForLive(req.params.videoId);
 			if (videoAvailable) {
-				res.send(videoAvailable);
+				res.json(videoAvailable);
 				return;
 			}
 			res.status(404).send();
@@ -129,7 +129,7 @@ function configureRoutes(app) {
 						}
 						videos.push(video);
 					});
-					res.send(videos);
+					res.json(videos);
 				})).catch(errors => {
 					throw errors;
 				});
