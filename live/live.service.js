@@ -6,7 +6,7 @@ const { getAvailableLanguages: getTranslationAvbLang } = require('../google/tran
 const { translateText, translateFree } = require('../google/translation/translation.service');
 
 function startLive(liveOptions, consumer, translateConsumer, refreshDataConsumer) {
-	return newBufferedLive(liveOptions, async data => {
+	return newBufferedLive(liveOptions, data => {
 		consumer(data);
 		// translateFree(liveOptions, data.text)
 		// 	.then(res => {
