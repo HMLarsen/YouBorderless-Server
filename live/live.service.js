@@ -35,30 +35,7 @@ function getTranslationSupportedLanguages() {
 	return getTranslationAvbLang();
 }
 
-async function getVideoAvailableForLive(videoId) {
-	const videoInfo = await ytdl.getInfo(videoId);
-	if (videoInfo) {
-		if (isVideoAvailableToLive(videoInfo.videoDetails)) {
-			return videoInfo;
-		}
-	}
-	return null;
-}
-
-function isVideoAvailableToLive(videoDetails) {
-	if (videoDetails
-		&& videoDetails.isLive
-		&& videoDetails.isLiveContent
-		&& videoDetails.isCrawlable
-		&& !videoDetails.isPrivate) {
-		return true;
-	}
-	return false;
-}
-
 exports.startLive = startLive;
 exports.stopLive = stopLive;
 exports.getTranscribeSupportedLanguages = getTranscribeSupportedLanguages;
 exports.getTranslationSupportedLanguages = getTranslationSupportedLanguages;
-exports.getVideoAvailableForLive = getVideoAvailableForLive;
-exports.isVideoAvailableToLive = isVideoAvailableToLive;

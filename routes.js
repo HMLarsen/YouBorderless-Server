@@ -1,7 +1,8 @@
 const routeCache = require('route-cache');
 const axios = require('axios');
 const ytsr = require('ytsr');
-const { getTranscribeSupportedLanguages, getTranslationSupportedLanguages, getVideoAvailableForLive, isVideoAvailableToLive } = require('./live/live.service');
+const { getTranscribeSupportedLanguages, getTranslationSupportedLanguages } = require('./live/live.service');
+const { getVideoAvailableForLive, isVideoAvailableToLive } = require('./live/youtube.service');
 
 const DEFAULT_CACHE_SECONDS = 7889400; // three months
 const cacheConfig = routeCache.cacheSeconds(DEFAULT_CACHE_SECONDS);

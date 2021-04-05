@@ -58,7 +58,7 @@ const { Writable } = require('stream');
 const { spawn } = require('child_process');
 
 const pathToFfmpeg = require('ffmpeg-static');
-const { newStreamDownload, newOldStreamDownload } = require('../../live/youtube-dl.js');
+const { newStreamDownload, newOldStreamDownload } = require('../../live/youtube.service.js');
 const { configureRequestToRecognize } = require('./transcribe-language.service.js');
 
 // recorder media: 8142 more bytes> in 258.0531496062992 ms
