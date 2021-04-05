@@ -8,16 +8,16 @@ const { translateText, translateFree } = require('../google/translation/translat
 function startLive(liveOptions, consumer, translateConsumer, refreshDataConsumer) {
 	return newBufferedLive(liveOptions, async data => {
 		consumer(data);
-		translateFree(liveOptions, data.text)
-			.then(res => {
-				data.text = res.text;
-				translateConsumer(data);
-			})
-			.catch(err => {
-				data.text = err;
-				translateConsumer(data);
-				console.error('[ERROR]: ' + err);
-			});
+		// translateFree(liveOptions, data.text)
+		// 	.then(res => {
+		// 		data.text = res.text;
+		// 		translateConsumer(data);
+		// 	})
+		// 	.catch(err => {
+		// 		data.text = err;
+		// 		translateConsumer(data);
+		// 		console.error('[ERROR]: ' + err);
+		// 	});
 
 	}, refreshDataConsumer);
 }
