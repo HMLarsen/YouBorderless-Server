@@ -130,9 +130,7 @@ function configureRoutes(app) {
 						videos.push(video);
 					});
 					res.json(videos);
-				})).catch(errors => {
-					throw errors;
-				});
+				}));
 		} catch (err) {
 			res.status(500);
 			res.send(err.message);
