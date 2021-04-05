@@ -190,6 +190,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 			if (recognizeStream && !recognizeStream.destroyed) {
 				recognizeStream.write(chunk);
 			}
+			console.log('[buffer] - ' + chunk.length);
 			if (next) next();
 		}, BUFFER_INTERVAL);
 	}
@@ -273,6 +274,7 @@ function destroyBufferedLive(data) {
 		}
 		data.ytdlStream.removeAllListeners('data');
 		data.ytdlStream.destroy();
+		data.ytdlStream = null;
 		console.log('destroyed ytdl');
 	}
 	if (data.recognizeStream) {
@@ -281,6 +283,7 @@ function destroyBufferedLive(data) {
 		}
 		data.recognizeStream.removeAllListeners('data');
 		data.recognizeStream.destroy();
+		data.recognizeStream = null;
 		console.log('destroyed speech');
 	}
 }

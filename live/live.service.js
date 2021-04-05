@@ -7,6 +7,7 @@ const { translateText, translateFree } = require('../google/translation/translat
 
 function startLive(liveOptions, consumer, translateConsumer, refreshDataConsumer) {
 	return newBufferedLive(liveOptions, data => {
+		console.log('[transcrição] - ' + data.text);
 		consumer(data);
 		// translateFree(liveOptions, data.text)
 		// 	.then(res => {

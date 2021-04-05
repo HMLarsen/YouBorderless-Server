@@ -40,6 +40,7 @@ function startLive(socket, liveOptions) {
 	liveOptions.data = data;
 	socketLives.push(liveOptions);
 	socketStartedLives.set(socket.id, socketLives);
+	console.log('[iniciada] live ' + liveOptions.id + ' para o socket ' + socket.id);
 }
 
 function stopLive(socket, id) {
@@ -57,6 +58,7 @@ function stopLive(socket, id) {
 	// remove from list and update current key in map
 	socketLives = socketLives.filter(currentLive => currentLive.id !== id);
 	socketStartedLives.set(socket.id, socketLives);
+	console.log('[finalizada] live ' + id + ' para o socket ' + socket.id);
 }
 
 function stopAllLives(socket) {
@@ -68,6 +70,7 @@ function stopAllLives(socket) {
 
 function emitError(socket, liveId, message) {
 	socket.emit('live-error', { id: liveId, error: message });
+	console.error('[erro] "' + message + '" - live ' + liveId + ' para o socket ' + socket.id);
 }
 
 function configureLiveSockets(socketIo) {
