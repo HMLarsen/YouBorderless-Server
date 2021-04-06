@@ -26,6 +26,8 @@ function newStreamDownload(liveId) {
 }
 
 async function getVideoAvailableForLive(liveId) {
+	// const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
+	// const videoInfo = await ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } });
 	const videoInfo = await ytdl.getInfo(liveId);
 	if (videoInfo) {
 		if (isVideoAvailableToLive(videoInfo.videoDetails)) {
