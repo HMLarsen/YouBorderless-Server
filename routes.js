@@ -14,7 +14,7 @@ function configureRoutes(app) {
 			const languages = await getTranscribeSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(err?.status || 500);
+			res.status(500);
 			res.send(err.message);
 		}
 	});
@@ -23,7 +23,7 @@ function configureRoutes(app) {
 			const languages = await getTranslationSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(err?.status || 500);
+			res.status(500);
 			res.send(err.message);
 		}
 	});
@@ -58,6 +58,7 @@ function configureRoutes(app) {
 				});
 			res.json(videos);
 		} catch (err) {
+			console.log(err);
 			res.status(err?.status || 500);
 			res.send(err.message);
 		}
@@ -73,6 +74,7 @@ function configureRoutes(app) {
 			}
 			res.status(404).send();
 		} catch (err) {
+			console.log(err);
 			res.status(err?.status || 500);
 			res.send(err.message);
 		}
@@ -130,6 +132,7 @@ function configureRoutes(app) {
 					res.json(videos);
 				}));
 		} catch (err) {
+			console.log(err);
 			res.status(err?.status || 500);
 			res.send(err.message);
 		}
