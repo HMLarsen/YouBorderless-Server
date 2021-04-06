@@ -25,16 +25,27 @@ function newStreamDownload(liveId) {
 		'-f', 'best', '--hls-use-mpegts', '--ffmpeg-location', pathToFfmpeg]);
 }
 
-async function getVideoAvailableForLive(liveId) {
-	// const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
-	// const videoInfo = await ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } });
-	const videoInfo = await ytdl.getInfo(liveId);
-	if (videoInfo) {
-		if (isVideoAvailableToLive(videoInfo.videoDetails)) {
-			return videoInfo;
+function getVideoAvailableForLive(liveId) {
+	return new Promise((resolve, reject) => {
+		function resolvePromise(video) {
+			if (isVideoAvailableToLive(video.videoDetails)) {
+				resolve(video);
+				return;
+			}
+			resolve(undefined);
 		}
-	}
-	return null;
+		ytdl.getInfo(liveId)
+			.then(video => resolvePromise(video), err => {
+				console.log('[error ytdl.getInfo] - ' + err);
+				if (err.status_code === 429) {
+					const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
+					ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } })
+						.then(video => resolvePromise(video), err => reject(err));
+					return;
+				}
+				reject(err);
+			});
+	});
 }
 
 function isVideoAvailableToLive(videoDetails) {

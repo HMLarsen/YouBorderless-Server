@@ -1,5 +1,3 @@
-const ytdl = require('ytdl-core');
-
 const { newBufferedLive, destroyBufferedLive } = require('../google/transcribe/infinite-transcribe.service');
 const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/transcribe/transcribe-language.service');
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');

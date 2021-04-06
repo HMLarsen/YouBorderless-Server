@@ -14,8 +14,7 @@ function configureRoutes(app) {
 			const languages = await getTranscribeSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(500);
-			res.send(err.message);
+			res.status(500).send(err);
 		}
 	});
 	app.get('/supported-translation-languages', cacheConfig, async (req, res) => {
@@ -23,8 +22,7 @@ function configureRoutes(app) {
 			const languages = await getTranslationSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(500);
-			res.send(err.message);
+			res.status(500).send(err);
 		}
 	});
 
@@ -59,24 +57,27 @@ function configureRoutes(app) {
 			res.json(videos);
 		} catch (err) {
 			console.log(err);
-			res.status(err?.status || 500);
-			res.send(err.message);
+			res.status(err.status_code || 500).send(err);
 		}
 	});
 
 	// video for living
-	app.get('/live-info/:videoId', async (req, res) => {
+	app.get('/live-available/:videoId', async (req, res) => {
 		try {
-			const videoAvailable = await getVideoAvailableForLive(req.params.videoId);
+			const videoAvailable = await getVideoAvailableForLive(req.params.videoId)
+				.catch(err => {
+					if (err.message?.indexOf('No video id found:') >= 0) {
+						throw { error: { status_code: 404 } };
+					}
+				});
 			if (videoAvailable) {
-				res.json(videoAvailable);
+				res.status(200).send({ status: 'OK' });
 				return;
 			}
-			res.status(404).send();
+			res.sendStatus(404);
 		} catch (err) {
 			console.log(err);
-			res.status(err?.status || 500);
-			res.send(err.message);
+			res.status(err.status_code || 500).send(err);
 		}
 	});
 
@@ -133,8 +134,7 @@ function configureRoutes(app) {
 				}));
 		} catch (err) {
 			console.log(err);
-			res.status(err?.status || 500);
-			res.send(err.message);
+			res.status(err.status_code || 500).send(err);
 		}
 	});
 }
