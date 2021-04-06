@@ -14,7 +14,7 @@ function configureRoutes(app) {
 			const languages = await getTranscribeSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(500);
+			res.status(err?.status || 500);
 			res.send(err.message);
 		}
 	});
@@ -23,7 +23,7 @@ function configureRoutes(app) {
 			const languages = await getTranslationSupportedLanguages();
 			res.json(languages || []);
 		} catch (err) {
-			res.status(500);
+			res.status(err?.status || 500);
 			res.send(err.message);
 		}
 	});
@@ -35,16 +35,14 @@ function configureRoutes(app) {
 			const maxResults = req.body.maxResults;
 
 			let filters = await ytsr.getFilters(term);
-			const filter1 = filters.get('Type').get('Video');
-			filters = await ytsr.getFilters(filter1.url);
-			const filter2 = filters.get('Features').get('Live');
+			const filter = filters.get('Features').get('Live');
 			const options = {
 				limit: maxResults,
 				requestOptions: {
-					videoEmbeddable: true
+					videoEmbeddable: true // idk if this is working
 				}
 			}
-			const searchResults = await ytsr(filter2.url, options);
+			const searchResults = await ytsr(filter.url, options);
 			const videos = [];
 			searchResults.items
 				.filter(item => !item.isUpcoming && item.isLive)
@@ -58,10 +56,9 @@ function configureRoutes(app) {
 					const video = { id, title, description, thumbnailUrl, channel, views };
 					videos.push(video);
 				});
-
 			res.json(videos);
 		} catch (err) {
-			res.status(500);
+			res.status(err?.status || 500);
 			res.send(err.message);
 		}
 	});
@@ -76,7 +73,7 @@ function configureRoutes(app) {
 			}
 			res.status(404).send();
 		} catch (err) {
-			res.status(500);
+			res.status(err?.status || 500);
 			res.send(err.message);
 		}
 	});
@@ -133,7 +130,7 @@ function configureRoutes(app) {
 					res.json(videos);
 				}));
 		} catch (err) {
-			res.status(500);
+			res.status(err?.status || 500);
 			res.send(err.message);
 		}
 	});
