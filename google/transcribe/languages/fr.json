@@ -1,13 +1,9 @@
 {
-  "expireDate": 1630731094954,
+  "expireDate": 1630984379146,
   "languages": [
     {
-      "name": "Afrikaans (África do Sul)",
+      "name": "Afrikaans (Afrique du Sud)",
       "bcp": "af-ZA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -15,12 +11,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Albanês (Albânia)",
+      "name": "Albanais (Albanie)",
       "bcp": "sq-AL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -28,12 +20,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Amárico (Etiópia)",
+      "name": "Amharique (Éthiopie)",
       "bcp": "am-ET",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -41,12 +29,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Argélia)",
+      "name": "Arabe (Algérie)",
       "bcp": "ar-DZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -54,12 +38,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Bahrein)",
+      "name": "Arabe (Bahreïn)",
       "bcp": "ar-BH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -67,12 +47,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Egito)",
+      "name": "Arabe (Égypte)",
       "bcp": "ar-EG",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -80,12 +56,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Iraque)",
-      "bcp": "ar-IQ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
+      "name": "Arabe (Irak)",
+      "bcp": "ar-QI",
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -93,12 +65,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Israel)",
+      "name": "Arabe (Israël)",
       "bcp": "ar-IL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -106,12 +74,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Jordânia)",
+      "name": "Arabe (Jordanie)",
       "bcp": "ar-JO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -119,12 +83,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Kuwait)",
+      "name": "Arabe (Koweït)",
       "bcp": "ar-KW",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -132,12 +92,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Líbano)",
+      "name": "Arabe (Liban)",
       "bcp": "ar-LB",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -145,12 +101,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Marrocos)",
+      "name": "Arabe (Maroc)",
       "bcp": "ar-MA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -158,12 +110,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Omã)",
+      "name": "Arabe (Oman)",
       "bcp": "ar-OM",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -171,12 +119,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Qatar)",
+      "name": "Arabe (Qatar)",
       "bcp": "ar-QA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -184,12 +128,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Arábia Saudita)",
+      "name": "Arabe (Arabie saoudite)",
       "bcp": "ar-SA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -197,12 +137,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Estado da Palestina)",
+      "name": "Arabe (État de Palestine)",
       "bcp": "ar-PS",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -210,12 +146,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Tunísia)",
+      "name": "Arabe (Tunisie)",
       "bcp": "ar-TN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -223,12 +155,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Emirados Árabes Unidos)",
+      "name": "Arabe (Émirats arabes unis)",
       "bcp": "ar-AE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -236,12 +164,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Árabe (Iêmen)",
+      "name": "Arabe (Yémen)",
       "bcp": "ar-YE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -249,12 +173,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Armênio (Armênia)",
+      "name": "Arménien (Arménie)",
       "bcp": "hy-AM",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -262,12 +182,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Azerbaijano (Azerbaijão)",
+      "name": "Azéri (Azerbaïdjan)",
       "bcp": "az-AZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -275,12 +191,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Basco (Espanha)",
+      "name": "Basque (Espagne)",
       "bcp": "eu-ES",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -290,10 +202,6 @@
     {
       "name": "Bengali (Bangladesh)",
       "bcp": "bn-BD",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -301,12 +209,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Bengali (Índia)",
+      "name": "Bengali (Inde)",
       "bcp": "bn-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -314,12 +218,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Bósnio (Bósnia e Herzegovina)",
+      "name": "Bosnien (Bosnie-Herzégovine)",
       "bcp": "bs-BA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -327,12 +227,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Búlgaro (Bulgária)",
+      "name": "Bulgare (Bulgarie)",
       "bcp": "bg-BG",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -340,12 +236,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Birmanês (Mianmar)",
+      "name": "Birman (Myanmar)",
       "bcp": "my-MM",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -353,12 +245,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Catalão (Espanha)",
+      "name": "Catalan (Espagne)",
       "bcp": "ca-ES",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -366,12 +254,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinês, Cantonês (Tradicional, Hong Kong)",
+      "name": "Chinois cantonais (traditionnel, Hong Kong)",
       "bcp": "yue-Hant-HK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -379,12 +263,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinês, Mandarim (Simplificado, China)",
+      "name": "Chinois mandarin (simplifié, Chine)",
       "bcp": "zh (cmn-Hans-CN)",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -392,12 +272,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinês, Mandarim (Tradicional, Taiwan)",
+      "name": "Chinois mandarin (traditionnel, Taïwan)",
       "bcp": "zh-TW (cmn-Hant-TW)",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -405,12 +281,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Croata (Croácia)",
+      "name": "Croate (Croatie)",
       "bcp": "hr-HR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -418,12 +290,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Checo (República Tcheca)",
+      "name": "Tchèque (République tchèque)",
       "bcp": "cs-CZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -431,12 +299,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Dinamarquês (Dinamarca)",
+      "name": "Danois (Danemark)",
       "bcp": "da-DK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -444,12 +308,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Holandês (Bélgica)",
+      "name": "Néerlandais (Belgique)",
       "bcp": "nl-BE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -457,12 +317,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Holandês (Holanda)",
+      "name": "Néerlandais (Pays-Bas)",
       "bcp": "nl-NL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -470,12 +326,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Austrália)",
+      "name": "Anglais (Australie)",
       "bcp": "en-AU",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -483,12 +335,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Canadá)",
+      "name": "Anglais (Canada)",
       "bcp": "en-CA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -496,12 +344,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Gana)",
+      "name": "Anglais (Ghana)",
       "bcp": "en-GH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -509,12 +353,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Hong Kong)",
+      "name": "Anglais (Hong Kong)",
       "bcp": "en-HK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -522,12 +362,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Índia)",
+      "name": "Anglais (Inde)",
       "bcp": "en-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -535,12 +371,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Irlanda)",
+      "name": "Anglais (Irlande)",
       "bcp": "en-IE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -548,12 +380,8 @@
       "profanityFilter": true
     },
     {
-      "name": "English (Kenya)",
+      "name": "Anglais (Kenya)",
       "bcp": "en-KE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -563,10 +391,6 @@
     {
       "name": "English (New Zealand)",
       "bcp": "en-NZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -574,12 +398,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Nigéria)",
+      "name": "Anglais (Nigeria)",
       "bcp": "en-NG",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -587,12 +407,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Paquistão)",
+      "name": "Anglais (Pakistan)",
       "bcp": "en-PK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -600,12 +416,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Filipinas)",
+      "name": "Anglais (Philippines)",
       "bcp": "en-PH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -613,12 +425,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Singapura)",
+      "name": "Anglais (Singapour)",
       "bcp": "en-SG",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -626,12 +434,8 @@
       "profanityFilter": true
     },
     {
-      "name": "English (South Africa)",
+      "name": "Anglais (Afrique du Sud)",
       "bcp": "en-ZA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -639,12 +443,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Tanzânia)",
+      "name": "Anglais (Tanzanie)",
       "bcp": "en-TZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -652,14 +452,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (Reino Unido)",
+      "name": "Anglais (Royaume-Uni)",
       "bcp": "en-GB",
-      "models": [
-        "command_and_search",
-        "default",
-        "enhanced_phone_call",
-        "phone_call"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -667,15 +461,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Inglês (EUA)",
+      "name": "Anglais (États-Unis)",
       "bcp": "en-US",
-      "models": [
-        "command_and_search",
-        "default",
-        "enhanced_phone_call",
-        "enhanced_video",
-        "phone_call"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -683,12 +470,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Estoniano (Estônia)",
+      "name": "Estonien (Estonie)",
       "bcp": "et-EE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -696,12 +479,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Filipino (Filipinas)",
+      "name": "Philippin (Philippines)",
       "bcp": "fil-PH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -709,12 +488,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Finlandês (Finlândia)",
+      "name": "Finnois (Finlande)",
       "bcp": "fi-FI",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -722,12 +497,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Francês (Bélgica)",
+      "name": "Français (Belgique)",
       "bcp": "fr-BE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -735,12 +506,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Francês (Canadá)",
+      "name": "Français (Canada)",
       "bcp": "fr-CA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -748,14 +515,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Francês (França)",
+      "name": "Français (France)",
       "bcp": "fr-FR",
-      "models": [
-        "command_and_search",
-        "default",
-        "enhanced_phone_call",
-        "phone_call"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -763,12 +524,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Francês (Suíça)",
+      "name": "Français (Suisse)",
       "bcp": "fr-CH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -776,12 +533,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Galego (Espanha)",
+      "name": "Galicien (Espagne)",
       "bcp": "gl-ES",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -789,12 +542,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Georgiano (Geórgia)",
+      "name": "Géorgien (Géorgie)",
       "bcp": "ka-GE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -802,12 +551,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Alemão (Áustria)",
-      "bcp": "de-AT",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
+      "name": "Allemand (Autriche)",
+      "bcp": "de_at",
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -815,12 +560,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Alemão (Alemanha)",
+      "name": "Allemand (Allemagne)",
       "bcp": "de-DE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -828,12 +569,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Alemão (Suíça)",
-      "bcp": "de-CH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
+      "name": "Allemand (Suisse)",
+      "bcp": "de-ch",
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -841,12 +578,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Grego (grego)",
+      "name": "Grec (Grèce)",
       "bcp": "el-GR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -854,12 +587,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Gujarati (Índia)",
+      "name": "Gujarati (Inde)",
       "bcp": "gu-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -867,12 +596,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Hebraico (Israel)",
+      "name": "Hébreu (Israël)",
       "bcp": "iw-IL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -880,12 +605,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Hindi (Índia)",
+      "name": "Hindi (Inde)",
       "bcp": "hi-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -893,12 +614,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Húngaro (Hungria)",
+      "name": "Hongrois (Hongrie)",
       "bcp": "hu-HU",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -906,12 +623,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Islandês (Islândia)",
+      "name": "Islandais (Islande)",
       "bcp": "is-IS",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -919,12 +632,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Indonésio (Indonésia)",
+      "name": "Indonésien (Indonésie)",
       "bcp": "id-ID",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -932,12 +641,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Italiano (Itália)",
+      "name": "Italien (Italie)",
       "bcp": "it-IT",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -945,12 +650,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Italiano (Suíça)",
+      "name": "Italien (Suisse)",
       "bcp": "it-CH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -958,12 +659,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Japonês (Japão)",
+      "name": "Japonais (Japon)",
       "bcp": "ja-JP",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": true,
       "boost": true,
@@ -971,12 +668,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Javanês (Indonésia)",
+      "name": "Javanais (Indonésie)",
       "bcp": "jv-ID",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -984,12 +677,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Canarim (Índia)",
+      "name": "Kannada (Inde)",
       "bcp": "kn-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -997,12 +686,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Cazaque (Cazaquistão)",
+      "name": "Kazakh (Kazakhstan)",
       "bcp": "kk-KZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1010,12 +695,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Khmer (Camboja)",
+      "name": "Khmer (Cambodge)",
       "bcp": "km-KH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1023,12 +704,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Coreano (Coreia do Sul)",
+      "name": "Coréen (Corée du Sud)",
       "bcp": "ko-KR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -1036,12 +713,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Lao (Laos)",
+      "name": "Laotien (Laos)",
       "bcp": "lo-LA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1049,12 +722,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Letão (Letônia)",
+      "name": "Letton (Lettonie)",
       "bcp": "lv-LV",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1062,12 +731,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Lituano (Lituânia)",
+      "name": "Lituanien (Lituanie)",
       "bcp": "lt-LT",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1075,12 +740,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Macedônio (Macedônia do Norte)",
+      "name": "Macédonien (Macédoine du Nord)",
       "bcp": "mk-MK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1088,12 +749,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Malaio (Malásia)",
+      "name": "Malais (Malaisie)",
       "bcp": "ms-MY",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1101,12 +758,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Malaiala (Índia)",
+      "name": "Malayalam (Inde)",
       "bcp": "ml-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1114,12 +767,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Marathi (Índia)",
+      "name": "Marathi (Inde)",
       "bcp": "mr-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1127,12 +776,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Mongol (Mongólia)",
+      "name": "Mongol (Mongolie)",
       "bcp": "mn-MN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1140,12 +785,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Nepali (Nepal)",
+      "name": "Népalais (Népal)",
       "bcp": "ne-NP",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1153,12 +794,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Bokmål norueguês (Noruega)",
+      "name": "Norvégien bokmål (Norvège)",
       "bcp": "no-NO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1166,12 +803,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Persa (Irã)",
+      "name": "Persan (Iran)",
       "bcp": "fa-IR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1179,12 +812,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Polonês (Polônia)",
+      "name": "Polonais (Pologne)",
       "bcp": "pl-PL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1192,12 +821,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Português (Brasil)",
+      "name": "Portugais (Brésil)",
       "bcp": "pt-BR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": true,
       "boost": true,
@@ -1205,12 +830,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Português (Portugal)",
+      "name": "Portugais (Portugal)",
       "bcp": "pt-PT",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1218,12 +839,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Punjabi (Gurmukhi, Índia)",
+      "name": "Panjabi (gurmukhī, Inde)",
       "bcp": "pa-Guru-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1231,12 +848,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Romeno (Romênia)",
+      "name": "Roumain (Roumanie)",
       "bcp": "ro-RO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1244,14 +857,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Russo (russo)",
+      "name": "Russe (Russie)",
       "bcp": "ru-RU",
-      "models": [
-        "command_and_search",
-        "default",
-        "enhanced_phone_call",
-        "phone_call"
-      ],
       "punctuation": false,
       "diarization": true,
       "boost": true,
@@ -1259,12 +866,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Sérvio (Sérvia)",
+      "name": "Serbe (Serbie)",
       "bcp": "sr-RS",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1272,12 +875,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Cingalês (Sri Lanka)",
+      "name": "Cingalais (Sri Lanka)",
       "bcp": "si-LK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1285,12 +884,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Eslovaco (Eslováquia)",
+      "name": "Slovaque (Slovaquie)",
       "bcp": "sk-SK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1298,12 +893,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Esloveno (Eslovênia)",
+      "name": "Slovène (Slovénie)",
       "bcp": "sl-SI",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1311,12 +902,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Argentina)",
+      "name": "Espagnol (Argentine)",
       "bcp": "es-AR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1324,12 +911,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Bolívia)",
+      "name": "Espagnol (Bolivie)",
       "bcp": "es-BO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1337,12 +920,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Chile)",
+      "name": "Espagnol (Chili)",
       "bcp": "es-CL",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1350,12 +929,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Colômbia)",
+      "name": "Espagnol (Colombie)",
       "bcp": "es-CO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1363,12 +938,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Costa Rica)",
+      "name": "Espagnol (Costa Rica)",
       "bcp": "es-CR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1376,12 +947,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (República Dominicana)",
+      "name": "Espagnol (République dominicaine)",
       "bcp": "es-DO",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1389,12 +956,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Equador)",
+      "name": "Espagnol (Équateur)",
       "bcp": "es-EC",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1402,12 +965,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (El Salvador)",
+      "name": "Espagnol (Salvador)",
       "bcp": "es-SV",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1415,12 +974,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Guatemala)",
+      "name": "Espagnol (Guatemala)",
       "bcp": "es-GT",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1428,12 +983,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Honduras)",
+      "name": "Espagnol (Honduras)",
       "bcp": "es-HN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1441,12 +992,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (México)",
+      "name": "Espagnol (Mexique)",
       "bcp": "es-MX",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1454,12 +1001,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Nicarágua)",
+      "name": "Espagnol (Nicaragua)",
       "bcp": "es-NI",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1467,12 +1010,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Panamá)",
+      "name": "Espagnol (Panama)",
       "bcp": "es-PA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1480,12 +1019,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Paraguai)",
+      "name": "Espagnol (Paraguay)",
       "bcp": "es-PY",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1493,12 +1028,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Peru)",
+      "name": "Espagnol (Pérou)",
       "bcp": "es-PE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1506,12 +1037,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Porto Rico)",
+      "name": "Espagnol (Porto Rico)",
       "bcp": "es-PR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1519,12 +1046,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Espanha)",
+      "name": "Espagnol (Espagne)",
       "bcp": "es-ES",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": true,
       "boost": true,
@@ -1532,14 +1055,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (EUA)",
+      "name": "Espagnol (États-Unis)",
       "bcp": "es-US",
-      "models": [
-        "command_and_search",
-        "default",
-        "enhanced_phone_call",
-        "phone_call"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -1547,12 +1064,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Uruguai)",
+      "name": "Espagnol (Uruguay)",
       "bcp": "es-UY",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1560,12 +1073,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Espanhol (Venezuela)",
+      "name": "Espagnol (Venezuela)",
       "bcp": "es-VE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1573,12 +1082,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Sudanês(Indonésia)",
+      "name": "Soudanais (Indonésie)",
       "bcp": "su-ID",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1588,10 +1093,6 @@
     {
       "name": "Swahili (Kenya)",
       "bcp": "sw-KE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1601,10 +1102,6 @@
     {
       "name": "Swahili (Tanzania)",
       "bcp": "sw-TZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1612,12 +1109,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Sueco (Suécia)",
+      "name": "Suédois (Suède)",
       "bcp": "sv-SE",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -1625,12 +1118,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamil (Índia)",
+      "name": "Tamoul (Inde)",
       "bcp": "ta-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1638,12 +1127,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamil (Malásia)",
+      "name": "Tamoul (Malaisie)",
       "bcp": "ta-MY",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1651,12 +1136,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamil (Singapura)",
+      "name": "Tamoul (Singapour)",
       "bcp": "ta-SG",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1664,12 +1145,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamil (Sri Lanka)",
+      "name": "Tamoul (Sri Lanka)",
       "bcp": "ta-LK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1677,12 +1154,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Telugu (Índia)",
+      "name": "Télougou (Inde)",
       "bcp": "te-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1690,12 +1163,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Tailandês (Tailândia)",
+      "name": "Thaï (Thaïlande)",
       "bcp": "th-TH",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1703,12 +1172,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Turco (Turquia)",
+      "name": "Turc (Turquie)",
       "bcp": "tr-TR",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": true,
       "diarization": false,
       "boost": true,
@@ -1716,12 +1181,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Ucraniano (Ucrânia)",
+      "name": "Ukrainien (Ukraine)",
       "bcp": "uk-UA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1729,12 +1190,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Urdu (Índia)",
+      "name": "Ourdou (Inde)",
       "bcp": "ur-IN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1742,12 +1199,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Urdu (Paquistão)",
+      "name": "Ourdou (Pakistan)",
       "bcp": "ur-PK",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1755,12 +1208,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Uzbeque (Uzbequistão)",
+      "name": "Ouzbek (Ouzbékistan)",
       "bcp": "uz-UZ",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -1768,12 +1217,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Vietnamita (Vietnã)",
+      "name": "Vietnamien (Viêt Nam)",
       "bcp": "vi-VN",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -1781,12 +1226,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Zulu (África do Sul)",
+      "name": "Zoulou (Afrique du Sud)",
       "bcp": "zu-ZA",
-      "models": [
-        "command_and_search",
-        "default"
-      ],
       "punctuation": false,
       "diarization": false,
       "boost": true,

@@ -3,23 +3,31 @@ const { Translate } = require('@google-cloud/translate').v2;
 
 const translate = new Translate();
 
-async function fetchData() {
-	const [languages] = await translate.getLanguages('pt-BR'); //TODO code language by front-end parameter
+async function fetchData(languageCode) {
+	switch (languageCode) {
+		case 'pt':
+			languageCode = 'pt-BR';
+			break;
+
+		default:
+			break;
+	}
+	const [languages] = await translate.getLanguages(languageCode);
 	return languages;
 }
 
-async function getAvailableLanguages() {
+async function getAvailableLanguages(languageCode) {
 	// default number for cache the languages (in months)
 	const EXPIRED_CACHE = 5;
 	// name of the "cache" file for the languages
-	const languagesJsonFileName = 'google/translation/translation-languages.json';
+	const languagesJsonFileName = 'google/translation/languages/' + languageCode + '.json';
 
 	let languagesFile = fs.readFileSync(languagesJsonFileName);
 	let languagesJson = JSON.parse(languagesFile);
 
 	try {
 		if (!languagesJson.expireDate || languagesJson.expireDate <= Date.now()) {
-			const languagesArray = await fetchData();
+			const languagesArray = await fetchData(languageCode);
 			const date = new Date();
 			date.setMonth(date.getMonth() + EXPIRED_CACHE);
 			const jsonData = {

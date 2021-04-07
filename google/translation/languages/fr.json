@@ -1,37 +1,41 @@
 {
-  "expireDate": 1630730841653,
+  "expireDate": 1630984336694,
   "languages": [
     {
       "code": "af",
-      "name": "Africâner"
+      "name": "Afrikaans"
     },
     {
       "code": "sq",
-      "name": "Albanês"
+      "name": "Albanais"
     },
     {
       "code": "de",
-      "name": "Alemão"
+      "name": "Allemand"
     },
     {
       "code": "am",
-      "name": "Amárico"
+      "name": "Amharique"
+    },
+    {
+      "code": "en",
+      "name": "Anglais"
     },
     {
       "code": "ar",
-      "name": "Árabe"
+      "name": "Arabe"
     },
     {
       "code": "hy",
-      "name": "Armênio"
+      "name": "Arménien"
     },
     {
       "code": "az",
-      "name": "Azerbaijano"
+      "name": "Azéri"
     },
     {
       "code": "eu",
-      "name": "Basco"
+      "name": "Basque"
     },
     {
       "code": "bn",
@@ -39,31 +43,23 @@
     },
     {
       "code": "be",
-      "name": "Bielo-russo"
+      "name": "Biélorusse"
     },
     {
       "code": "my",
-      "name": "Birmanês"
+      "name": "Birman"
     },
     {
       "code": "bs",
-      "name": "Bósnio"
+      "name": "Bosniaque"
     },
     {
       "code": "bg",
-      "name": "Búlgaro"
-    },
-    {
-      "code": "kn",
-      "name": "Canarês"
+      "name": "Bulgare"
     },
     {
       "code": "ca",
-      "name": "Catalão"
-    },
-    {
-      "code": "kk",
-      "name": "Cazaque"
+      "name": "Catalan"
     },
     {
       "code": "ceb",
@@ -71,119 +67,99 @@
     },
     {
       "code": "ny",
-      "name": "Chicheua"
+      "name": "Chichewa"
     },
     {
       "code": "zh-CN",
-      "name": "Chinês (simplificado)"
+      "name": "Chinois (simplifié)"
     },
     {
       "code": "zh-TW",
-      "name": "Chinês (tradicional)"
-    },
-    {
-      "code": "sn",
-      "name": "Chona"
+      "name": "Chinois (traditionnel)"
     },
     {
       "code": "si",
-      "name": "Cingalês"
+      "name": "Cingalais"
     },
     {
       "code": "ko",
-      "name": "Coreano"
+      "name": "Coréen"
     },
     {
       "code": "co",
-      "name": "Corso"
+      "name": "Corse"
     },
     {
       "code": "ht",
-      "name": "Crioulo haitiano"
+      "name": "Créole haïtien"
     },
     {
       "code": "hr",
-      "name": "Croata"
-    },
-    {
-      "code": "ku",
-      "name": "Curdo"
+      "name": "Croate"
     },
     {
       "code": "da",
-      "name": "Dinamarquês"
-    },
-    {
-      "code": "sk",
-      "name": "Eslovaco"
-    },
-    {
-      "code": "sl",
-      "name": "Esloveno"
+      "name": "Danois"
     },
     {
       "code": "es",
-      "name": "Espanhol"
+      "name": "Espagnol"
     },
     {
       "code": "eo",
-      "name": "Esperanto"
+      "name": "Espéranto"
     },
     {
       "code": "et",
-      "name": "Estoniano"
-    },
-    {
-      "code": "tl",
-      "name": "Filipino"
+      "name": "Estonien"
     },
     {
       "code": "fi",
-      "name": "Finlandês"
+      "name": "Finnois"
     },
     {
       "code": "fr",
-      "name": "Francês"
+      "name": "Français"
     },
     {
       "code": "fy",
-      "name": "Frísio"
+      "name": "Frison"
     },
     {
       "code": "gd",
-      "name": "Gaélico escocês"
+      "name": "Gaélique (Écosse)"
     },
     {
       "code": "gl",
-      "name": "Galego"
+      "name": "Galicien"
     },
     {
       "code": "cy",
-      "name": "Galês"
+      "name": "Gallois"
     },
     {
       "code": "ka",
-      "name": "Georgiano"
+      "name": "Géorgien"
     },
     {
       "code": "el",
-      "name": "Grego"
+      "name": "Grec"
     },
     {
       "code": "gu",
-      "name": "Guzerate"
+      "name": "Gujarati"
     },
     {
       "code": "ha",
-      "name": "Hauçá"
+      "name": "Haoussa"
     },
     {
       "code": "haw",
-      "name": "Havaiano"
+      "name": "Hawaïen"
     },
     {
       "code": "iw",
-      "name": "Hebraico"
+      "name": "Hébreu"
     },
     {
       "code": "hi",
@@ -194,52 +170,44 @@
       "name": "Hmong"
     },
     {
-      "code": "nl",
-      "name": "Holandês"
-    },
-    {
       "code": "hu",
-      "name": "Húngaro"
+      "name": "Hongrois"
     },
     {
       "code": "ig",
       "name": "Igbo"
     },
     {
-      "code": "yi",
-      "name": "Iídiche"
-    },
-    {
       "code": "id",
-      "name": "Indonésio"
-    },
-    {
-      "code": "en",
-      "name": "Inglês"
-    },
-    {
-      "code": "yo",
-      "name": "Ioruba"
+      "name": "Indonésien"
     },
     {
       "code": "ga",
-      "name": "Irlandês"
+      "name": "Irlandais"
     },
     {
       "code": "is",
-      "name": "Islandês"
+      "name": "Islandais"
     },
     {
       "code": "it",
-      "name": "Italiano"
+      "name": "Italien"
     },
     {
       "code": "ja",
-      "name": "Japonês"
+      "name": "Japonais"
     },
     {
       "code": "jw",
-      "name": "Javanês"
+      "name": "Javanais"
+    },
+    {
+      "code": "kn",
+      "name": "Kannada"
+    },
+    {
+      "code": "kk",
+      "name": "Kazakh"
     },
     {
       "code": "km",
@@ -250,44 +218,52 @@
       "name": "Kinyarwanda"
     },
     {
+      "code": "ky",
+      "name": "Kirghiz"
+    },
+    {
+      "code": "ku",
+      "name": "Kurde"
+    },
+    {
       "code": "lo",
-      "name": "Laosiano"
+      "name": "Laotien"
     },
     {
       "code": "la",
-      "name": "Latim"
+      "name": "Latin"
     },
     {
       "code": "lv",
-      "name": "Letão"
+      "name": "Letton"
     },
     {
       "code": "lt",
-      "name": "Lituano"
+      "name": "Lituanien"
     },
     {
       "code": "lb",
-      "name": "Luxemburguês"
+      "name": "Luxembourgeois"
     },
     {
       "code": "mk",
-      "name": "Macedônio"
-    },
-    {
-      "code": "ml",
-      "name": "Malaiala"
+      "name": "Macédonien"
     },
     {
       "code": "ms",
-      "name": "Malaio"
+      "name": "Malaisien"
+    },
+    {
+      "code": "ml",
+      "name": "Malayalam"
     },
     {
       "code": "mg",
-      "name": "Malgaxe"
+      "name": "Malgache"
     },
     {
       "code": "mt",
-      "name": "Maltês"
+      "name": "Maltais"
     },
     {
       "code": "mi",
@@ -295,155 +271,179 @@
     },
     {
       "code": "mr",
-      "name": "Marata"
+      "name": "Marathi"
     },
     {
       "code": "mn",
       "name": "Mongol"
     },
     {
+      "code": "nl",
+      "name": "Néerlandais"
+    },
+    {
       "code": "ne",
-      "name": "Nepalês"
+      "name": "Népalais"
     },
     {
       "code": "no",
-      "name": "Norueguês"
+      "name": "Norvégien"
     },
     {
       "code": "or",
-      "name": "Oriá"
+      "name": "Odia (oriya)"
+    },
+    {
+      "code": "ug",
+      "name": "Ouïgour"
+    },
+    {
+      "code": "uz",
+      "name": "Ouzbek"
     },
     {
       "code": "ps",
-      "name": "Pachto"
-    },
-    {
-      "code": "fa",
-      "name": "Persa"
-    },
-    {
-      "code": "pl",
-      "name": "Polonês"
-    },
-    {
-      "code": "pt",
-      "name": "Português"
+      "name": "Pachtô"
     },
     {
       "code": "pa",
-      "name": "Punjabi"
+      "name": "Panjabi"
     },
     {
-      "code": "ky",
-      "name": "Quirguiz"
+      "code": "fa",
+      "name": "Persan"
+    },
+    {
+      "code": "tl",
+      "name": "Philippin"
+    },
+    {
+      "code": "pl",
+      "name": "Polonais"
+    },
+    {
+      "code": "pt",
+      "name": "Portugais"
     },
     {
       "code": "ro",
-      "name": "Romeno"
+      "name": "Roumain"
     },
     {
       "code": "ru",
-      "name": "Russo"
+      "name": "Russe"
     },
     {
       "code": "sm",
-      "name": "Samoano"
+      "name": "Samoan"
     },
     {
       "code": "sr",
-      "name": "Sérvio"
+      "name": "Serbe"
     },
     {
       "code": "st",
-      "name": "Sessoto"
+      "name": "Sesotho"
+    },
+    {
+      "code": "sn",
+      "name": "Shona"
     },
     {
       "code": "sd",
-      "name": "Sindi"
+      "name": "Sindhî"
+    },
+    {
+      "code": "sk",
+      "name": "Slovaque"
+    },
+    {
+      "code": "sl",
+      "name": "Slovène"
     },
     {
       "code": "so",
       "name": "Somali"
     },
     {
-      "code": "sw",
-      "name": "Suaíle"
+      "code": "su",
+      "name": "Soundanais"
     },
     {
       "code": "sv",
-      "name": "Sueco"
+      "name": "Suédois"
     },
     {
-      "code": "su",
-      "name": "Sundanês"
+      "code": "sw",
+      "name": "Swahili"
     },
     {
       "code": "tg",
-      "name": "Tadjique"
-    },
-    {
-      "code": "th",
-      "name": "Tailandês"
+      "name": "Tadjik"
     },
     {
       "code": "ta",
-      "name": "Tâmil"
+      "name": "Tamoul"
     },
     {
       "code": "tt",
-      "name": "Tártaro"
+      "name": "Tatar"
     },
     {
       "code": "cs",
-      "name": "Tcheco"
+      "name": "Tchèque"
     },
     {
       "code": "te",
-      "name": "Telugo"
+      "name": "Telugu"
+    },
+    {
+      "code": "th",
+      "name": "Thaï"
     },
     {
       "code": "tr",
-      "name": "Turco"
+      "name": "Turc"
     },
     {
       "code": "tk",
-      "name": "Turcomano"
+      "name": "Turkmène"
     },
     {
       "code": "uk",
-      "name": "Ucraniano"
-    },
-    {
-      "code": "ug",
-      "name": "Uigur"
+      "name": "Ukrainien"
     },
     {
       "code": "ur",
       "name": "Urdu"
     },
     {
-      "code": "uz",
-      "name": "Uzbeque"
-    },
-    {
       "code": "vi",
-      "name": "Vietnamita"
+      "name": "Vietnamien"
     },
     {
       "code": "xh",
       "name": "Xhosa"
     },
     {
+      "code": "yi",
+      "name": "Yiddish"
+    },
+    {
+      "code": "yo",
+      "name": "Yorouba"
+    },
+    {
       "code": "zu",
-      "name": "Zulu"
+      "name": "Zoulou"
     },
     {
       "code": "he",
-      "name": "Hebraico"
+      "name": "Hébreu"
     },
     {
       "code": "zh",
-      "name": "Chinês (simplificado)"
+      "name": "Chinois (simplifié)"
     }
   ]
 }

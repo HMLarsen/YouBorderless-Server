@@ -25,12 +25,12 @@ function stopLive(data) {
 	destroyBufferedLive(data);
 }
 
-function getTranscribeSupportedLanguages() {
-	return getTranscribeAvbLang();
+function getTranscribeSupportedLanguages(languageCode) {
+	return getTranscribeAvbLang(languageCode);
 }
 
-function getTranslationSupportedLanguages() {
-	return getTranslationAvbLang();
+function getTranslationSupportedLanguages(languageCode) {
+	return getTranslationAvbLang(languageCode);
 }
 
 exports.startLive = startLive;

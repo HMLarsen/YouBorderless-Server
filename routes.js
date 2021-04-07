@@ -9,17 +9,19 @@ const cacheConfig = routeCache.cacheSeconds(DEFAULT_CACHE_SECONDS);
 
 function configureRoutes(app) {
 	// languages
-	app.get('/supported-transcribe-languages', cacheConfig, async (req, res) => {
+	app.get('/supported-transcribe-languages/:code', cacheConfig, async (req, res) => {
 		try {
-			const languages = await getTranscribeSupportedLanguages();
+			const languageCode = req.params.code;
+			const languages = await getTranscribeSupportedLanguages(languageCode);
 			res.json(languages || []);
 		} catch (err) {
 			res.status(500).send(err);
 		}
 	});
-	app.get('/supported-translation-languages', cacheConfig, async (req, res) => {
+	app.get('/supported-translation-languages/:code', cacheConfig, async (req, res) => {
 		try {
-			const languages = await getTranslationSupportedLanguages();
+			const languageCode = req.params.code;
+			const languages = await getTranslationSupportedLanguages(languageCode);
 			res.json(languages || []);
 		} catch (err) {
 			res.status(500).send(err);

@@ -2,10 +2,8 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const axios = require('axios');
 
-async function fetchData() {
-	// default language "pt" for the page, the reason is getting correctly the models parsed from page
-	// TODO language code by front-end... it will be necessary to change the code below... to retrieve models
-	const languagesUrl = 'https://cloud.google.com/speech-to-text/docs/languages?hl=pt';
+async function fetchData(languageCode) {
+	const languagesUrl = 'https://cloud.google.com/speech-to-text/docs/languages?hl=' + languageCode;
 	return await axios(languagesUrl)
 		.then(res => {
 			const html = res.data;
@@ -22,14 +20,13 @@ async function fetchData() {
 				const confidence = $($(row).children('td')[i++]).text();
 				const profanityFilter = $($(row).children('td')[i++]).text();
 
-				// se a linguagem existe no mapa significa que existe outro model para ela
-				// mais de uma linha pro mesmo bcp = mais de um model
+				// if the language exists on the map it means that there is another model for it
+				// more than one line for the same bcp = more than one model
 				let language = languages.get(bcp);
 				if (!language) {
 					languages.set(bcp, {
 						name,
 						bcp,
-						models: [],
 						punctuation: !!punctuation,
 						diarization: !!diarization,
 						boost: !!boost,
@@ -38,51 +35,23 @@ async function fetchData() {
 					});
 					language = languages.get(bcp);
 				}
-				// modelos
-				switch (model) {
-					case 'Vídeo':
-						language.models.push('video');
-						break;
-
-					case 'Vídeo aprimorado':
-						language.models.push('enhanced_video');
-						break;
-
-					case 'Chamada telefônica':
-					case 'Chamada telefônica (Beta)':
-						language.models.push('phone_call');
-						break;
-
-					case 'Chamada telefônica aprimorada':
-					case 'Chamada telefônica aprimorada (Beta)':
-						language.models.push('enhanced_phone_call');
-						break;
-
-					case 'Comando e pesquisa':
-						language.models.push('command_and_search');
-						break;
-
-					default:
-						language.models.push('default');
-						break;
-				}
 			});
 			return Array.from(languages.values());
 		});
 }
 
-async function getAvailableLanguages() {
+async function getAvailableLanguages(languageCode) {
 	// default number for cache the languages (in months)
 	const EXPIRED_CACHE = 5;
 	// name of the "cache" file for the languages
-	const languagesJsonFileName = 'google/transcribe/transcribe-languages.json';
+	const languagesJsonFileName = 'google/transcribe/languages/' + languageCode + '.json';
 
 	let languagesFile = fs.readFileSync(languagesJsonFileName);
 	let languagesJson = JSON.parse(languagesFile);
 
 	try {
 		if (!languagesJson.expireDate || languagesJson.expireDate <= Date.now()) {
-			const languagesArray = await fetchData();
+			const languagesArray = await fetchData(languageCode);
 			const date = new Date();
 			date.setMonth(date.getMonth() + EXPIRED_CACHE);
 			const jsonData = {
