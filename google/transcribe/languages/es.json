@@ -1,8 +1,8 @@
 {
-  "expireDate": 1630984379146,
+  "expireDate": 1631060041728,
   "languages": [
     {
-      "name": "Afrikaans (Afrique du Sud)",
+      "name": "Afrikáans (Sudáfrica)",
       "bcp": "af-ZA",
       "punctuation": false,
       "diarization": false,
@@ -11,7 +11,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Albanais (Albanie)",
+      "name": "Albanés (Albania)",
       "bcp": "sq-AL",
       "punctuation": false,
       "diarization": false,
@@ -20,7 +20,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Amharique (Éthiopie)",
+      "name": "Amárico (Etiopía)",
       "bcp": "am-ET",
       "punctuation": false,
       "diarization": false,
@@ -29,7 +29,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Algérie)",
+      "name": "Árabe (Argelia)",
       "bcp": "ar-DZ",
       "punctuation": false,
       "diarization": false,
@@ -38,7 +38,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Bahreïn)",
+      "name": "Árabe (Baréin)",
       "bcp": "ar-BH",
       "punctuation": false,
       "diarization": false,
@@ -47,7 +47,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Égypte)",
+      "name": "Árabe (Egipto)",
       "bcp": "ar-EG",
       "punctuation": false,
       "diarization": false,
@@ -56,8 +56,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Irak)",
-      "bcp": "ar-QI",
+      "name": "Árabe (Irak)",
+      "bcp": "ar-IQ",
       "punctuation": false,
       "diarization": false,
       "boost": true,
@@ -65,7 +65,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Israël)",
+      "name": "Árabe (Israel)",
       "bcp": "ar-IL",
       "punctuation": false,
       "diarization": false,
@@ -74,7 +74,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Jordanie)",
+      "name": "Árabe (Jordania)",
       "bcp": "ar-JO",
       "punctuation": false,
       "diarization": false,
@@ -83,7 +83,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Koweït)",
+      "name": "Árabe (Kuwait)",
       "bcp": "ar-KW",
       "punctuation": false,
       "diarization": false,
@@ -92,7 +92,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Liban)",
+      "name": "Árabe (Líbano)",
       "bcp": "ar-LB",
       "punctuation": false,
       "diarization": false,
@@ -101,7 +101,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Maroc)",
+      "name": "Árabe (Marruecos)",
       "bcp": "ar-MA",
       "punctuation": false,
       "diarization": false,
@@ -110,7 +110,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Oman)",
+      "name": "Árabe (Omán)",
       "bcp": "ar-OM",
       "punctuation": false,
       "diarization": false,
@@ -119,7 +119,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Qatar)",
+      "name": "Árabe (Catar)",
       "bcp": "ar-QA",
       "punctuation": false,
       "diarization": false,
@@ -128,7 +128,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Arabie saoudite)",
+      "name": "Árabe (Arabia Saudita)",
       "bcp": "ar-SA",
       "punctuation": false,
       "diarization": false,
@@ -137,7 +137,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (État de Palestine)",
+      "name": "Árabe (Estado de Palestina)",
       "bcp": "ar-PS",
       "punctuation": false,
       "diarization": false,
@@ -146,7 +146,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Tunisie)",
+      "name": "Árabe (Túnez)",
       "bcp": "ar-TN",
       "punctuation": false,
       "diarization": false,
@@ -155,7 +155,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Émirats arabes unis)",
+      "name": "Árabe (Emiratos Árabes Unidos)",
       "bcp": "ar-AE",
       "punctuation": false,
       "diarization": false,
@@ -164,7 +164,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arabe (Yémen)",
+      "name": "Árabe (Yemen)",
       "bcp": "ar-YE",
       "punctuation": false,
       "diarization": false,
@@ -173,7 +173,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Arménien (Arménie)",
+      "name": "Armenio (Armenia)",
       "bcp": "hy-AM",
       "punctuation": false,
       "diarization": false,
@@ -182,7 +182,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Azéri (Azerbaïdjan)",
+      "name": "Azerbaiyano (Azerbaiyán)",
       "bcp": "az-AZ",
       "punctuation": false,
       "diarization": false,
@@ -191,7 +191,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Basque (Espagne)",
+      "name": "Vasco (España)",
       "bcp": "eu-ES",
       "punctuation": false,
       "diarization": false,
@@ -200,7 +200,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Bengali (Bangladesh)",
+      "name": "Bengalí (Bangladés)",
       "bcp": "bn-BD",
       "punctuation": false,
       "diarization": false,
@@ -209,7 +209,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Bengali (Inde)",
+      "name": "Bengalí (India)",
       "bcp": "bn-IN",
       "punctuation": false,
       "diarization": false,
@@ -218,7 +218,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Bosnien (Bosnie-Herzégovine)",
+      "name": "Bosnio (Bosnia y Escocia)",
       "bcp": "bs-BA",
       "punctuation": false,
       "diarization": false,
@@ -227,7 +227,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Bulgare (Bulgarie)",
+      "name": "Búlgaro (Bulgaria)",
       "bcp": "bg-BG",
       "punctuation": false,
       "diarization": false,
@@ -236,7 +236,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Birman (Myanmar)",
+      "name": "Birmano (Birmania)",
       "bcp": "my-MM",
       "punctuation": false,
       "diarization": false,
@@ -245,7 +245,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Catalan (Espagne)",
+      "name": "Catalán (España)",
       "bcp": "ca-ES",
       "punctuation": false,
       "diarization": false,
@@ -254,7 +254,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinois cantonais (traditionnel, Hong Kong)",
+      "name": "Chino, Cantonés (Tradicional Hong Kong)",
       "bcp": "yue-Hant-HK",
       "punctuation": false,
       "diarization": false,
@@ -263,7 +263,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinois mandarin (simplifié, Chine)",
+      "name": "Chino, Mandarín (Simplificado, China)",
       "bcp": "zh (cmn-Hans-CN)",
       "punctuation": true,
       "diarization": true,
@@ -272,7 +272,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Chinois mandarin (traditionnel, Taïwan)",
+      "name": "Chino, Mandarín (Tradicional, Taiwán)",
       "bcp": "zh-TW (cmn-Hant-TW)",
       "punctuation": true,
       "diarization": false,
@@ -281,7 +281,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Croate (Croatie)",
+      "name": "Croata (Croacia)",
       "bcp": "hr-HR",
       "punctuation": false,
       "diarization": false,
@@ -290,7 +290,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Tchèque (République tchèque)",
+      "name": "Checo (República Checa)",
       "bcp": "cs-CZ",
       "punctuation": true,
       "diarization": false,
@@ -299,7 +299,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Danois (Danemark)",
+      "name": "Danés (Dinamarca)",
       "bcp": "da-DK",
       "punctuation": true,
       "diarization": false,
@@ -308,7 +308,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Néerlandais (Belgique)",
+      "name": "Holandés (Bélgica)",
       "bcp": "nl-BE",
       "punctuation": false,
       "diarization": false,
@@ -317,7 +317,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Néerlandais (Pays-Bas)",
+      "name": "Holandés (Países Bajos)",
       "bcp": "nl-NL",
       "punctuation": false,
       "diarization": false,
@@ -326,7 +326,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Australie)",
+      "name": "Inglés (Australia)",
       "bcp": "en-AU",
       "punctuation": true,
       "diarization": false,
@@ -335,7 +335,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Canada)",
+      "name": "Inglés (Canadá)",
       "bcp": "en-CA",
       "punctuation": false,
       "diarization": false,
@@ -344,7 +344,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Ghana)",
+      "name": "Inglés (Ghana)",
       "bcp": "en-GH",
       "punctuation": false,
       "diarization": false,
@@ -353,7 +353,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Hong Kong)",
+      "name": "Inglés (Hong Kong)",
       "bcp": "en-HK",
       "punctuation": false,
       "diarization": false,
@@ -362,7 +362,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Inde)",
+      "name": "Inglés (India)",
       "bcp": "en-IN",
       "punctuation": true,
       "diarization": true,
@@ -371,7 +371,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Irlande)",
+      "name": "Inglés (Irlanda)",
       "bcp": "en-IE",
       "punctuation": false,
       "diarization": false,
@@ -380,7 +380,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Kenya)",
+      "name": "Inglés (Kenia)",
       "bcp": "en-KE",
       "punctuation": false,
       "diarization": false,
@@ -389,7 +389,7 @@
       "profanityFilter": true
     },
     {
-      "name": "English (New Zealand)",
+      "name": "Inglés (Nueva Zelanda)",
       "bcp": "en-NZ",
       "punctuation": false,
       "diarization": false,
@@ -398,7 +398,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Nigeria)",
+      "name": "Inglés (Nigeria)",
       "bcp": "en-NG",
       "punctuation": false,
       "diarization": false,
@@ -407,7 +407,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Pakistan)",
+      "name": "Inglés (Pakistán)",
       "bcp": "en-PK",
       "punctuation": false,
       "diarization": false,
@@ -416,7 +416,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Philippines)",
+      "name": "Inglés (Filipinas)",
       "bcp": "en-PH",
       "punctuation": false,
       "diarization": false,
@@ -425,7 +425,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Singapour)",
+      "name": "Inglés (Singapur)",
       "bcp": "en-SG",
       "punctuation": true,
       "diarization": true,
@@ -434,7 +434,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Afrique du Sud)",
+      "name": "Inglés (Sudáfrica)",
       "bcp": "en-ZA",
       "punctuation": false,
       "diarization": false,
@@ -443,7 +443,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Tanzanie)",
+      "name": "Inglés (Tanzania)",
       "bcp": "en-TZ",
       "punctuation": false,
       "diarization": false,
@@ -452,7 +452,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (Royaume-Uni)",
+      "name": "Inglés (Reino Unido)",
       "bcp": "en-GB",
       "punctuation": true,
       "diarization": true,
@@ -461,7 +461,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Anglais (États-Unis)",
+      "name": "Inglés (Estados Unidos)",
       "bcp": "en-US",
       "punctuation": true,
       "diarization": true,
@@ -470,7 +470,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Estonien (Estonie)",
+      "name": "Estonio (Estonia)",
       "bcp": "et-EE",
       "punctuation": false,
       "diarization": false,
@@ -479,7 +479,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Philippin (Philippines)",
+      "name": "Filipino (Filipinas)",
       "bcp": "fil-PH",
       "punctuation": false,
       "diarization": false,
@@ -488,7 +488,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Finnois (Finlande)",
+      "name": "Finés (Finlandia)",
       "bcp": "fi-FI",
       "punctuation": true,
       "diarization": false,
@@ -497,7 +497,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Français (Belgique)",
+      "name": "Francés (Bélgica)",
       "bcp": "fr-BE",
       "punctuation": false,
       "diarization": false,
@@ -506,7 +506,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Français (Canada)",
+      "name": "Francés (Canadá)",
       "bcp": "fr-CA",
       "punctuation": false,
       "diarization": false,
@@ -515,7 +515,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Français (France)",
+      "name": "Francés (Francia)",
       "bcp": "fr-FR",
       "punctuation": true,
       "diarization": true,
@@ -524,7 +524,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Français (Suisse)",
+      "name": "Francés (Suiza)",
       "bcp": "fr-CH",
       "punctuation": false,
       "diarization": false,
@@ -533,7 +533,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Galicien (Espagne)",
+      "name": "Gallego (España)",
       "bcp": "gl-ES",
       "punctuation": false,
       "diarization": false,
@@ -542,7 +542,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Géorgien (Géorgie)",
+      "name": "Georgiano (Georgia)",
       "bcp": "ka-GE",
       "punctuation": false,
       "diarization": false,
@@ -551,8 +551,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Allemand (Autriche)",
-      "bcp": "de_at",
+      "name": "Alemán (Austria)",
+      "bcp": "de_AT",
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -560,7 +560,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Allemand (Allemagne)",
+      "name": "Alemán (Alemania)",
       "bcp": "de-DE",
       "punctuation": true,
       "diarization": true,
@@ -569,8 +569,8 @@
       "profanityFilter": true
     },
     {
-      "name": "Allemand (Suisse)",
-      "bcp": "de-ch",
+      "name": "Alemán (Suiza)",
+      "bcp": "de-CH",
       "punctuation": false,
       "diarization": false,
       "boost": false,
@@ -578,7 +578,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Grec (Grèce)",
+      "name": "Griego (Grecia)",
       "bcp": "el-GR",
       "punctuation": false,
       "diarization": false,
@@ -587,7 +587,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Gujarati (Inde)",
+      "name": "Guyaratí (India)",
       "bcp": "gu-IN",
       "punctuation": false,
       "diarization": false,
@@ -596,7 +596,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Hébreu (Israël)",
+      "name": "Hebreo (Israel)",
       "bcp": "iw-IL",
       "punctuation": false,
       "diarization": false,
@@ -605,7 +605,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Hindi (Inde)",
+      "name": "Hindi (India)",
       "bcp": "hi-IN",
       "punctuation": false,
       "diarization": false,
@@ -614,7 +614,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Hongrois (Hongrie)",
+      "name": "Húngaro (Hungría)",
       "bcp": "hu-HU",
       "punctuation": false,
       "diarization": false,
@@ -623,7 +623,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Islandais (Islande)",
+      "name": "Islandés (Islandia)",
       "bcp": "is-IS",
       "punctuation": false,
       "diarization": false,
@@ -632,7 +632,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Indonésien (Indonésie)",
+      "name": "Indonesio (Indonesia)",
       "bcp": "id-ID",
       "punctuation": true,
       "diarization": false,
@@ -641,7 +641,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Italien (Italie)",
+      "name": "Italiano (Italia)",
       "bcp": "it-IT",
       "punctuation": true,
       "diarization": true,
@@ -650,7 +650,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Italien (Suisse)",
+      "name": "Italiano (Suiza)",
       "bcp": "it-CH",
       "punctuation": false,
       "diarization": false,
@@ -659,7 +659,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Japonais (Japon)",
+      "name": "Japonés (Japón)",
       "bcp": "ja-JP",
       "punctuation": true,
       "diarization": true,
@@ -668,7 +668,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Javanais (Indonésie)",
+      "name": "Javanés (Indonesia)",
       "bcp": "jv-ID",
       "punctuation": false,
       "diarization": false,
@@ -677,7 +677,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Kannada (Inde)",
+      "name": "Canarés (India)",
       "bcp": "kn-IN",
       "punctuation": false,
       "diarization": false,
@@ -686,7 +686,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Kazakh (Kazakhstan)",
+      "name": "Kazajo (Kazajistán)",
       "bcp": "kk-KZ",
       "punctuation": false,
       "diarization": false,
@@ -695,7 +695,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Khmer (Cambodge)",
+      "name": "Jemer (Camboya)",
       "bcp": "km-KH",
       "punctuation": false,
       "diarization": false,
@@ -704,7 +704,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Coréen (Corée du Sud)",
+      "name": "Coreano (Corea del Sur)",
       "bcp": "ko-KR",
       "punctuation": true,
       "diarization": false,
@@ -713,7 +713,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Laotien (Laos)",
+      "name": "Lao (Laos)",
       "bcp": "lo-LA",
       "punctuation": false,
       "diarization": false,
@@ -722,7 +722,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Letton (Lettonie)",
+      "name": "Letón (Letonia)",
       "bcp": "lv-LV",
       "punctuation": false,
       "diarization": false,
@@ -731,7 +731,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Lituanien (Lituanie)",
+      "name": "Lituano (Lituania)",
       "bcp": "lt-LT",
       "punctuation": false,
       "diarization": false,
@@ -740,7 +740,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Macédonien (Macédoine du Nord)",
+      "name": "Macedonio (Macedonia del Norte)",
       "bcp": "mk-MK",
       "punctuation": false,
       "diarization": false,
@@ -749,7 +749,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Malais (Malaisie)",
+      "name": "Malayo (Malasia)",
       "bcp": "ms-MY",
       "punctuation": false,
       "diarization": false,
@@ -758,7 +758,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Malayalam (Inde)",
+      "name": "Malabar (India)",
       "bcp": "ml-IN",
       "punctuation": false,
       "diarization": false,
@@ -767,7 +767,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Marathi (Inde)",
+      "name": "Maratí (India)",
       "bcp": "mr-IN",
       "punctuation": false,
       "diarization": false,
@@ -776,7 +776,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Mongol (Mongolie)",
+      "name": "Mongol (Mongolia)",
       "bcp": "mn-MN",
       "punctuation": false,
       "diarization": false,
@@ -785,7 +785,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Népalais (Népal)",
+      "name": "Nepalí (Nepal)",
       "bcp": "ne-NP",
       "punctuation": false,
       "diarization": false,
@@ -794,7 +794,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Norvégien bokmål (Norvège)",
+      "name": "Noruego, Bokmål (Noruega)",
       "bcp": "no-NO",
       "punctuation": false,
       "diarization": false,
@@ -803,7 +803,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Persan (Iran)",
+      "name": "Persa (Irán)",
       "bcp": "fa-IR",
       "punctuation": false,
       "diarization": false,
@@ -812,7 +812,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Polonais (Pologne)",
+      "name": "Polaco (Polonia)",
       "bcp": "pl-PL",
       "punctuation": false,
       "diarization": false,
@@ -821,7 +821,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Portugais (Brésil)",
+      "name": "Portugués (Brasil)",
       "bcp": "pt-BR",
       "punctuation": false,
       "diarization": true,
@@ -830,7 +830,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Portugais (Portugal)",
+      "name": "Portugués (Portugal)",
       "bcp": "pt-PT",
       "punctuation": false,
       "diarization": false,
@@ -839,7 +839,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Panjabi (gurmukhī, Inde)",
+      "name": "Panyabí (Gurmukhi, India)",
       "bcp": "pa-Guru-IN",
       "punctuation": false,
       "diarization": false,
@@ -848,7 +848,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Roumain (Roumanie)",
+      "name": "Rumano (Rumania)",
       "bcp": "ro-RO",
       "punctuation": false,
       "diarization": false,
@@ -857,7 +857,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Russe (Russie)",
+      "name": "Ruso (Rusia)",
       "bcp": "ru-RU",
       "punctuation": false,
       "diarization": true,
@@ -866,7 +866,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Serbe (Serbie)",
+      "name": "Serbio (Serbia)",
       "bcp": "sr-RS",
       "punctuation": false,
       "diarization": false,
@@ -875,7 +875,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Cingalais (Sri Lanka)",
+      "name": "Cingalés (Sri Lanka)",
       "bcp": "si-LK",
       "punctuation": false,
       "diarization": false,
@@ -884,7 +884,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Slovaque (Slovaquie)",
+      "name": "Eslovaco (Eslovaquia)",
       "bcp": "sk-SK",
       "punctuation": false,
       "diarization": false,
@@ -893,7 +893,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Slovène (Slovénie)",
+      "name": "Esloveno (Eslovenia)",
       "bcp": "sl-SI",
       "punctuation": false,
       "diarization": false,
@@ -902,7 +902,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Argentine)",
+      "name": "Español (Argentina)",
       "bcp": "es-AR",
       "punctuation": false,
       "diarization": false,
@@ -911,7 +911,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Bolivie)",
+      "name": "Español (Bolivia)",
       "bcp": "es-BO",
       "punctuation": false,
       "diarization": false,
@@ -920,7 +920,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Chili)",
+      "name": "Español (Chile)",
       "bcp": "es-CL",
       "punctuation": false,
       "diarization": false,
@@ -929,7 +929,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Colombie)",
+      "name": "Español (Colombia)",
       "bcp": "es-CO",
       "punctuation": false,
       "diarization": false,
@@ -938,7 +938,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Costa Rica)",
+      "name": "Español (Costa Rica)",
       "bcp": "es-CR",
       "punctuation": false,
       "diarization": false,
@@ -947,7 +947,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (République dominicaine)",
+      "name": "Español (República Dominicana)",
       "bcp": "es-DO",
       "punctuation": false,
       "diarization": false,
@@ -956,7 +956,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Équateur)",
+      "name": "Español (Ecuador)",
       "bcp": "es-EC",
       "punctuation": false,
       "diarization": false,
@@ -965,7 +965,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Salvador)",
+      "name": "Español (El Salvador)",
       "bcp": "es-SV",
       "punctuation": false,
       "diarization": false,
@@ -974,7 +974,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Guatemala)",
+      "name": "Español (Guatemala)",
       "bcp": "es-GT",
       "punctuation": false,
       "diarization": false,
@@ -983,7 +983,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Honduras)",
+      "name": "Español (Honduras)",
       "bcp": "es-HN",
       "punctuation": false,
       "diarization": false,
@@ -992,7 +992,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Mexique)",
+      "name": "Español (México)",
       "bcp": "es-MX",
       "punctuation": false,
       "diarization": false,
@@ -1001,7 +1001,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Nicaragua)",
+      "name": "Español (Nicaragua)",
       "bcp": "es-NI",
       "punctuation": false,
       "diarization": false,
@@ -1010,7 +1010,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Panama)",
+      "name": "Español (Panamá)",
       "bcp": "es-PA",
       "punctuation": false,
       "diarization": false,
@@ -1019,7 +1019,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Paraguay)",
+      "name": "Español (Paraguay)",
       "bcp": "es-PY",
       "punctuation": false,
       "diarization": false,
@@ -1028,7 +1028,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Pérou)",
+      "name": "Español (Perú)",
       "bcp": "es-PE",
       "punctuation": false,
       "diarization": false,
@@ -1037,7 +1037,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Porto Rico)",
+      "name": "Español (Puerto Rico)",
       "bcp": "es-PR",
       "punctuation": false,
       "diarization": false,
@@ -1046,7 +1046,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Espagne)",
+      "name": "Español (España)",
       "bcp": "es-ES",
       "punctuation": false,
       "diarization": true,
@@ -1055,7 +1055,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (États-Unis)",
+      "name": "Español (Estados Unidos)",
       "bcp": "es-US",
       "punctuation": true,
       "diarization": false,
@@ -1064,7 +1064,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Uruguay)",
+      "name": "Español (Uruguay)",
       "bcp": "es-UY",
       "punctuation": false,
       "diarization": false,
@@ -1073,7 +1073,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Espagnol (Venezuela)",
+      "name": "Español (Venezuela)",
       "bcp": "es-VE",
       "punctuation": false,
       "diarization": false,
@@ -1082,7 +1082,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Soudanais (Indonésie)",
+      "name": "Sondanés (Indonesia)",
       "bcp": "su-ID",
       "punctuation": false,
       "diarization": false,
@@ -1091,7 +1091,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Swahili (Kenya)",
+      "name": "Suajili (Kenia)",
       "bcp": "sw-KE",
       "punctuation": false,
       "diarization": false,
@@ -1100,7 +1100,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Swahili (Tanzania)",
+      "name": "Suajili (Tanzania)",
       "bcp": "sw-TZ",
       "punctuation": false,
       "diarization": false,
@@ -1109,7 +1109,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Suédois (Suède)",
+      "name": "Sueco (Suecia)",
       "bcp": "sv-SE",
       "punctuation": true,
       "diarization": false,
@@ -1118,7 +1118,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamoul (Inde)",
+      "name": "Tamil (India)",
       "bcp": "ta-IN",
       "punctuation": false,
       "diarization": false,
@@ -1127,7 +1127,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamoul (Malaisie)",
+      "name": "Tamil (Malasia)",
       "bcp": "ta-MY",
       "punctuation": false,
       "diarization": false,
@@ -1136,7 +1136,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamoul (Singapour)",
+      "name": "Tamil (Singapur)",
       "bcp": "ta-SG",
       "punctuation": false,
       "diarization": false,
@@ -1145,7 +1145,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Tamoul (Sri Lanka)",
+      "name": "Tamil (Sri Lanka)",
       "bcp": "ta-LK",
       "punctuation": false,
       "diarization": false,
@@ -1154,7 +1154,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Télougou (Inde)",
+      "name": "Telugu (India)",
       "bcp": "te-IN",
       "punctuation": false,
       "diarization": false,
@@ -1163,7 +1163,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Thaï (Thaïlande)",
+      "name": "Tailandés (Tailandia)",
       "bcp": "th-TH",
       "punctuation": false,
       "diarization": false,
@@ -1172,7 +1172,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Turc (Turquie)",
+      "name": "Turco (Turquía)",
       "bcp": "tr-TR",
       "punctuation": true,
       "diarization": false,
@@ -1181,7 +1181,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Ukrainien (Ukraine)",
+      "name": "Ucraniano (Ucrania)",
       "bcp": "uk-UA",
       "punctuation": false,
       "diarization": false,
@@ -1190,7 +1190,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Ourdou (Inde)",
+      "name": "Urdu (India)",
       "bcp": "ur-IN",
       "punctuation": false,
       "diarization": false,
@@ -1199,7 +1199,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Ourdou (Pakistan)",
+      "name": "Urdu (Pakistán)",
       "bcp": "ur-PK",
       "punctuation": false,
       "diarization": false,
@@ -1208,7 +1208,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Ouzbek (Ouzbékistan)",
+      "name": "Uzbeko (Uzbekistán)",
       "bcp": "uz-UZ",
       "punctuation": false,
       "diarization": false,
@@ -1217,7 +1217,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Vietnamien (Viêt Nam)",
+      "name": "Vietnamita (Vietnam)",
       "bcp": "vi-VN",
       "punctuation": false,
       "diarization": false,
@@ -1226,7 +1226,7 @@
       "profanityFilter": true
     },
     {
-      "name": "Zoulou (Afrique du Sud)",
+      "name": "Zulú (Sudáfrica)",
       "bcp": "zu-ZA",
       "punctuation": false,
       "diarization": false,
