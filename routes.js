@@ -1,8 +1,6 @@
 const routeCache = require('route-cache');
-const axios = require('axios');
-const ytsr = require('ytsr');
 const { getTranscribeSupportedLanguages, getTranslationSupportedLanguages } = require('./live/live.service');
-const { getVideoAvailableForLive, isVideoAvailableToLive } = require('./live/youtube.service');
+const { getVideoAvailableForLive, searchVideos, videosFromChannels } = require('./live/youtube.service');
 
 const DEFAULT_CACHE_SECONDS = 7889400; // three months
 const cacheConfig = routeCache.cacheSeconds(DEFAULT_CACHE_SECONDS);
@@ -28,41 +26,6 @@ function configureRoutes(app) {
 		}
 	});
 
-	// searching
-	app.post('/search-lives', async (req, res) => {
-		try {
-			const term = req.body.term;
-			const maxResults = req.body.maxResults;
-
-			let filters = await ytsr.getFilters(term);
-			const filter = filters.get('Features').get('Live');
-			const options = {
-				limit: maxResults,
-				requestOptions: {
-					videoEmbeddable: true // idk if this is working
-				}
-			}
-			const searchResults = await ytsr(filter.url, options);
-			const videos = [];
-			searchResults.items
-				.filter(item => !item.isUpcoming && item.isLive)
-				.forEach(item => {
-					const id = item.id;
-					const title = item.title;
-					const description = item.description;
-					const thumbnailUrl = item.bestThumbnail.url;
-					const channel = { name: item.author?.name, avatarUrl: item.author?.bestAvatar?.url };
-					const views = item.views;
-					const video = { id, title, description, thumbnailUrl, channel, views };
-					videos.push(video);
-				});
-			res.json(videos);
-		} catch (err) {
-			console.log(err);
-			res.status(err.status_code || 500).send(err);
-		}
-	});
-
 	// video for living
 	app.get('/live-available/:videoId', async (req, res) => {
 		try {
@@ -83,81 +46,25 @@ function configureRoutes(app) {
 		}
 	});
 
+	// searching
+	app.post('/search-lives', async (req, res) => {
+		try {
+			const term = req.body.term;
+			const maxResults = req.body.maxResults;
+			const videos = await searchVideos(term, maxResults);
+			res.json(videos);
+		} catch (err) {
+			console.log(err);
+			res.status(err.status_code || 500).send(err);
+		}
+	});
+
 	// live videos from subscriptions
-	app.post('/live-video-by-channels', (req, res) => {
+	app.post('/live-video-by-channels', async (req, res) => {
 		try {
 			const channelsId = req.body.channelsId;
-			const fetches = channelsId.map(channelId => axios.get(`https://www.youtube.com/channel/${channelId}/live`));
-			axios.all(fetches)
-				.then(axios.spread((...responses) => {
-					const videos = [];
-					responses.forEach(response => {
-						const ytInitialPlayerResponse = response.data.split('var ytInitialPlayerResponse = ')[1];
-
-						// if has the player variable in the html response
-						if (!ytInitialPlayerResponse) {
-							return;
-						}
-						const jsonData = JSON.parse(ytInitialPlayerResponse.split('};')[0] + '}');
-						const playabilityStatus = jsonData.playabilityStatus;
-						const videoDetails = jsonData.videoDetails;
-						const annotations = jsonData.annotations;
-
-						// validations for live videos only
-						if (playabilityStatus.status !== 'OK' || !playabilityStatus.playableInEmbed) {
-							return;
-						}
-						const playabilityStatusVideoId = playabilityStatus.liveStreamability.liveStreamabilityRenderer.videoId;
-						// verify if videoDetails has the same video id that is living
-						if (playabilityStatusVideoId !== videoDetails.videoId) {
-							return;
-						}
-						const available = isVideoAvailableToLive(videoDetails);
-						if (!available) {
-							return;
-						}
-						const id = videoDetails.videoId;
-						const title = videoDetails.title;
-						const description = videoDetails.shortDescription;
-						const thumbnailUrl = videoDetails.thumbnail.thumbnails[videoDetails.thumbnail.thumbnails.length - 1].url;
-						const views = videoDetails.viewCount;
-						const video = { id, title, description, thumbnailUrl, views };
-
-						if (annotations && annotations[0]) {
-							// first type to get channel
-							const channelName = annotations[0].playerAnnotationsExpandedRenderer?.featuredChannel?.channelName;
-							const channelAvatarUrl = annotations[0].playerAnnotationsExpandedRenderer?.featuredChannel?.watermark?.thumbnails[0]?.url;
-							const channel = { name: channelName, avatarUrl: channelAvatarUrl };
-							video.channel = channel;
-						} else {
-							// second type to get channel
-							const ytInitialData = response.data.split('var ytInitialData = ')[1];
-							if (ytInitialData) {
-								const jsonInitialData = JSON.parse(ytInitialData.split('};')[0] + '}');
-								const contents = jsonInitialData.contents.twoColumnWatchNextResults.results.results.contents;
-								if (contents) {
-									contents.forEach(content => {
-										if (!content.videoSecondaryInfoRenderer) {
-											return;
-										}
-										const videoOwnerRenderer = content.videoSecondaryInfoRenderer.owner?.videoOwnerRenderer;
-										const runs = videoOwnerRenderer?.title?.runs;
-										// if the runs result is the same channel as the true author from video
-										if (runs && runs[0] && runs[0].text === videoDetails.author) {
-											const channelName = videoDetails.author;
-											const thumbnails = videoOwnerRenderer?.thumbnail?.thumbnails;
-											const channelAvatarUrl = thumbnails[thumbnails.length - 1]?.url;
-											const channel = { name: channelName, avatarUrl: channelAvatarUrl };
-											video.channel = channel;
-										}
-									});
-								}
-							}
-						}
-						videos.push(video);
-					});
-					res.json(videos);
-				}));
+			const videos = await videosFromChannels(channelsId);
+			res.json(videos);
 		} catch (err) {
 			console.log(err);
 			res.status(err.status_code || 500).send(err);
