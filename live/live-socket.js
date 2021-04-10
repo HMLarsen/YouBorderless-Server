@@ -23,8 +23,7 @@ function startLive(socket, liveOptions) {
 
 	// init live data
 	const data = liveServiceStartLive(liveOptions,
-		data => socket.emit('text-live', { id: liveOptions.id, data }),
-		data => socket.emit('translate-live', { id: liveOptions.id, data }),
+		data => socket.emit('live-captions', { id: liveOptions.id, data }),
 		refreshData => {
 			let socketLives = socketStartedLives.get(socket.id);
 			socketLives = socketLives.filter(currentLive => currentLive.id !== liveOptions.id);
