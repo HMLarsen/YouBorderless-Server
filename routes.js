@@ -123,12 +123,36 @@ function configureRoutes(app) {
 						const views = videoDetails.viewCount;
 						const video = { id, title, description, thumbnailUrl, views };
 
-						// channel
 						if (annotations && annotations[0]) {
+							// first type to get channel
 							const channelName = annotations[0].playerAnnotationsExpandedRenderer?.featuredChannel?.channelName;
 							const channelAvatarUrl = annotations[0].playerAnnotationsExpandedRenderer?.featuredChannel?.watermark?.thumbnails[0]?.url;
 							const channel = { name: channelName, avatarUrl: channelAvatarUrl };
 							video.channel = channel;
+						} else {
+							// second type to get channel
+							const ytInitialData = response.data.split('var ytInitialData = ')[1];
+							if (ytInitialData) {
+								const jsonInitialData = JSON.parse(ytInitialData.split('};')[0] + '}');
+								const contents = jsonInitialData.contents.twoColumnWatchNextResults.results.results.contents;
+								if (contents) {
+									contents.forEach(content => {
+										if (!content.videoSecondaryInfoRenderer) {
+											return;
+										}
+										const videoOwnerRenderer = content.videoSecondaryInfoRenderer.owner?.videoOwnerRenderer;
+										const runs = videoOwnerRenderer?.title?.runs;
+										// if the runs result is the same channel as the true author from video
+										if (runs && runs[0] && runs[0].text === videoDetails.author) {
+											const channelName = videoDetails.author;
+											const thumbnails = videoOwnerRenderer?.thumbnail?.thumbnails;
+											const channelAvatarUrl = thumbnails[thumbnails.length - 1]?.url;
+											const channel = { name: channelName, avatarUrl: channelAvatarUrl };
+											video.channel = channel;
+										}
+									});
+								}
+							}
 						}
 						videos.push(video);
 					});
