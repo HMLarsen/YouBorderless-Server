@@ -51,7 +51,8 @@ function configureRoutes(app) {
 		try {
 			const term = req.body.term;
 			const maxResults = req.body.maxResults;
-			const videos = await searchVideos(term, maxResults);
+			const locale = req.body.locale;
+			const videos = await searchVideos(term, maxResults, locale);
 			res.json(videos);
 		} catch (err) {
 			console.log(err);

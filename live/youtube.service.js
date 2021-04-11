@@ -61,15 +61,17 @@ function isVideoAvailableToLive(videoDetails) {
 	return false;
 }
 
-async function searchVideos(term, maxResults) {
+async function searchVideos(term, maxResults, locale) {
 	const filters = await ytsr.getFilters(term);
-	const filter = filters.get('Features').get('Live');
-	const options = {
-		limit: maxResults,
-		requestOptions: {
-			videoEmbeddable: true // idk if this is working
-		}
+	const filter = filters.get('Features').get('Live'); // default en-US locale for get the filters
+
+	const options = { limit: maxResults };
+	if (locale) {
+		const splitLocale = locale.split('-');
+		options.hl = splitLocale[0]; // language code example "en"
+		if (splitLocale.length > 1) options.gl = splitLocale[1]; // country code example "US"
 	}
+
 	const searchResults = await ytsr(filter.url, options);
 	const videos = [];
 	searchResults.items
