@@ -3,8 +3,8 @@ const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/trans
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');
 const { translateText, translateFree } = require('../google/translation/translation.service');
 
-function startLive(liveOptions, consumer, refreshDataConsumer) {
-	return newBufferedLive(liveOptions, data => {
+function startLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
+	return newBufferedLive(liveOptions, liveStartTime, data => {
 		console.log('[transcrição] - ' + data.text);
 		consumer(data);
 		// translateFree(liveOptions, data.text)

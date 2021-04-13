@@ -22,7 +22,7 @@ function newOldStreamDownload(liveId) {
 	return ytdl(liveId, ytdlConfig);
 }
 
-function newStreamDownload(liveId) {
+function newStreamDownload(liveId, liveStartTime) {
 	return youtubeDlWrap.execStream([YOUTUBE_VIDEO_URL + liveId,
 		'-f', 'best', '--hls-use-mpegts', '--ffmpeg-location', pathToFfmpeg]);
 }

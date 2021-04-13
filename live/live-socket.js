@@ -5,7 +5,7 @@ const { startLive: liveServiceStartLive, stopLive: liveServiceStopLive } = requi
 // value: lives array initialized by socket
 const socketStartedLives = new Map();
 
-function startLive(socket, liveOptions) {
+function startLive(socket, liveOptions, liveStartTime) {
 	// invalid parameters
 	if (!liveOptions || !liveOptions.id || !liveOptions.liveId) {
 		emitError(socket, liveOptions.id, errorCodes.INVALID_INIT_LIVE_PARAMS);
@@ -22,7 +22,7 @@ function startLive(socket, liveOptions) {
 	}
 
 	// init live data
-	const data = liveServiceStartLive(liveOptions,
+	const data = liveServiceStartLive(liveOptions, liveStartTime,
 		data => socket.emit('live-captions', { id: liveOptions.id, data }),
 		refreshData => {
 			let socketLives = socketStartedLives.get(socket.id);
@@ -79,7 +79,7 @@ function configureLiveSockets(socketIo) {
 			socketStartedLives.delete(socket.id);
 		});
 
-		socket.on('init-live', liveOptions => startLive(socket, liveOptions));
+		socket.on('init-live', ({ liveOptions, liveStartTime }) => startLive(socket, liveOptions, liveStartTime));
 		socket.on('stop-live', liveId => stopLive(socket, liveId));
 	});
 }

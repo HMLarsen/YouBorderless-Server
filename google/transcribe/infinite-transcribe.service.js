@@ -66,7 +66,7 @@ const BUFFER_INTERVAL = 258;
 const streamingLimit = 290000;
 const client = new speech.SpeechClient();
 
-function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
+function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
 	let recognizeStream = null;
 	let ytdlStream = null;
 	let restartCounter = 0;
@@ -98,16 +98,26 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		// convert to flac audio for best performance in google transcribe
 		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:44100', 'pipe:1']);
 		ffmpeg.stdout.on('data', chunk => writeChunks(chunk));
-		ytdlStream = newStreamDownload(liveOptions.liveId)
-			.pipe(ffmpeg.stdin)
-			.on('end', () => {
+		ytdlStream = newStreamDownload(liveOptions.liveId, liveStartTime)
+			//.on('youtubeDlEvent', (eventType, eventData) => console.log('[youtubeDlEvent] - ' + eventType, eventData))
+			.on('error', err => {
+				console.error('newStreamDownload error ' + err);
 				ytdlStream.destroy();
 				ytdlStream = null;
 				recognizeStream.destroy();
 				recognizeStream = null;
+				console.log('destruiu por erro');
+			})
+			.on('close', () => {
+				ytdlStream.destroy();
+				ytdlStream = null;
+				recognizeStream?.destroy();
+				recognizeStream = null;
 				console.log('end da stream do youtube');
-			});
+			})
+			.pipe(ffmpeg.stdin);
 		request.config.encoding = 'FLAC';
+		request.config.sampleRateHertz = 44100;
 
 		// old mode
 		// ytdlStream = newOldStreamDownload(liveOptions.liveId)
@@ -135,6 +145,8 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		// 		console.error('Audio recording error ' + err);
 		// 	})
 		// 	.pipe(audioInputStreamTransform);
+		// request.config.encoding = 'LINEAR16';
+		// request.config.sampleRateHertz = 16000;
 
 		// Initiate (Reinitiate) a recognize stream
 		recognizeStream = client
@@ -144,7 +156,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 					// restartStream();
 				} else {
 					console.error('API request error ' + err);
-					ytdlStream.destroy();
+					ytdlStream?.destroy();
 					ytdlStream = null;
 					recognizeStream.destroy();
 					recognizeStream = null;
@@ -158,41 +170,39 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 	}
 
 	function writeChunks(chunk, next) {
-		setTimeout(() => {
-			if (newStream && lastAudioInput.length !== 0) {
-				// Approximate math to calculate time of chunks
-				const chunkTime = streamingLimit / lastAudioInput.length;
-				if (chunkTime !== 0) {
-					if (bridgingOffset < 0) {
-						bridgingOffset = 0;
-					}
-					if (bridgingOffset > finalRequestEndTime) {
-						bridgingOffset = finalRequestEndTime;
-					}
-					const chunksFromMS = Math.floor(
-						(finalRequestEndTime - bridgingOffset) / chunkTime
-					);
-					bridgingOffset = Math.floor(
-						(lastAudioInput.length - chunksFromMS) * chunkTime
-					);
+		if (newStream && lastAudioInput.length !== 0) {
+			// Approximate math to calculate time of chunks
+			const chunkTime = streamingLimit / lastAudioInput.length;
+			if (chunkTime !== 0) {
+				if (bridgingOffset < 0) {
+					bridgingOffset = 0;
+				}
+				if (bridgingOffset > finalRequestEndTime) {
+					bridgingOffset = finalRequestEndTime;
+				}
+				const chunksFromMS = Math.floor(
+					(finalRequestEndTime - bridgingOffset) / chunkTime
+				);
+				bridgingOffset = Math.floor(
+					(lastAudioInput.length - chunksFromMS) * chunkTime
+				);
 
-					for (let i = chunksFromMS; i < lastAudioInput.length; i++) {
-						if (recognizeStream && !recognizeStream.destroyed) {
-							recognizeStream.write(lastAudioInput[i]);
-						}
+				for (let i = chunksFromMS; i < lastAudioInput.length; i++) {
+					if (recognizeStream && !recognizeStream.destroyed) {
+						recognizeStream.write(lastAudioInput[i]);
 					}
 				}
-				newStream = false;
 			}
+			newStream = false;
+		}
 
-			audioInput.push(chunk);
+		audioInput.push(chunk);
 
-			if (recognizeStream && !recognizeStream.destroyed) {
-				recognizeStream.write(chunk);
-			}
-			console.log('[buffer] - ' + chunk.length);
-			if (next) next();
-		}, BUFFER_INTERVAL);
+		if (recognizeStream && !recognizeStream.destroyed) {
+			recognizeStream.write(chunk);
+		}
+		console.log('[buffer] - ' + chunk.length);
+		if (next) next();
 	}
 
 	const speechCallback = stream => {
@@ -204,15 +214,32 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		// Calculate correct time based on offset from audio sent twice
 		const correctedTime = resultEndTime - bridgingOffset + streamingLimit * restartCounter;
 
-		//process.stdout.clearLine();
-		//process.stdout.cursorTo(0);
 		let stdoutText = '';
 		if (stream.results[0] && stream.results[0].alternatives[0]) {
 			stdoutText = stream.results[0].alternatives[0].transcript;
-			// stdoutText = stream.results[0].alternatives[0].transcript;
 		}
 
 		const isFinal = stream.results[0].isFinal;
+		console.log('[' + correctedTime + '] - ' + stdoutText);
+
+		// stream.results.forEach(result => {
+		// 	console.log(`Transcription: ${result.alternatives[0].transcript}`);
+		// 	result.alternatives[0].words.forEach(wordInfo => {
+		// 		// NOTE: If you have a time offset exceeding 2^32 seconds, use the
+		// 		// wordInfo.{x}Time.seconds.high to calculate seconds.
+		// 		const startSecs =
+		// 			`${wordInfo.startTime.seconds}` +
+		// 			'.' +
+		// 			wordInfo.startTime.nanos / 100000000;
+		// 		const endSecs =
+		// 			`${wordInfo.endTime.seconds}` +
+		// 			'.' +
+		// 			wordInfo.endTime.nanos / 100000000;
+		// 		console.log(`Word: ${wordInfo.word}`);
+		// 		console.log(`\t ${startSecs} secs - ${endSecs} secs`);
+		// 	});
+		// });
+
 		consumer({
 			time: correctedTime,
 			text: stdoutText,
