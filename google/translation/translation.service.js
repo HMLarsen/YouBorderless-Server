@@ -1,5 +1,5 @@
 const { TranslationServiceClient } = require('@google-cloud/translate');
-const tr = require('googletrans').default;
+const translate = require('google-translate-open-api').default;
 const config = require('../../config.js');
 
 const translationClient = new TranslationServiceClient();
@@ -14,7 +14,7 @@ const location = 'global';
  * @param text words to translate
  * @returns
  */
-async function translateText(liveOptions, text) {
+async function translateTextCharge(liveOptions, text) {
 	const request = {
 		parent: `projects/${projectId}/locations/${location}`,
 		contents: [text],
@@ -22,14 +22,16 @@ async function translateText(liveOptions, text) {
 		sourceLanguageCode: liveOptions.liveLanguage.bcp,
 		targetLanguageCode: liveOptions.liveToLanguage.code
 	};
-
 	const [response] = await translationClient.translateText(request);
 	return response.translations[0].translatedText;
 }
 
-function translateFree(liveOptions, text) {
-	return tr(text, liveOptions.liveToLanguage.code);
+function translateTextFree(liveOptions, text) {
+	return translate(text, {
+		client: 'dict-chrome-ex',
+		to: liveOptions.liveToLanguage.code
+	});
 }
 
-exports.translateText = translateText;
-exports.translateFree = translateFree;
+exports.translateTextCharge = translateTextCharge;
+exports.translateTextFree = translateTextFree;

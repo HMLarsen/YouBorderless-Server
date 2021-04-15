@@ -10,21 +10,12 @@ const youtubeDlPath = path.resolve('live/binaries/' + YTDL_BINARY_NAME);
 const youtubeDlWrap = new YoutubeDlWrap(youtubeDlPath);
 const YOUTUBE_VIDEO_URL = 'https://www.youtube.com/watch?v=';
 
-const ytdlConfig = {
-	// filter: 'audioonly', // this is not possible due throttling by youtube
-	quality: 'highestaudio',
-	// liveBuffer: 20000,
-	// highWaterMark: 512
-	// dlChunkSize: 1000
-};
-
-function newOldStreamDownload(liveId) {
-	return ytdl(liveId, ytdlConfig);
-}
-
-function newStreamDownload(liveId, liveStartTime) {
+function streamDownload(liveId, liveStartTime) {
 	return youtubeDlWrap.execStream([YOUTUBE_VIDEO_URL + liveId,
-		'-f', 'best', '--hls-use-mpegts', '--ffmpeg-location', pathToFfmpeg]);
+		'-f', 'best',
+		'--youtube-skip-dash-manifest',
+		'--hls-use-mpegts',
+		'--ffmpeg-location', pathToFfmpeg]);
 }
 
 function getVideoAvailableForLive(liveId) {
@@ -38,7 +29,7 @@ function getVideoAvailableForLive(liveId) {
 		}
 		ytdl.getInfo(liveId)
 			.then(video => resolvePromise(video), err => {
-				console.log('[error ytdl.getInfo] - ' + err);
+				console.error('[error ytdl.getInfo] - ' + err);
 				if (err.status_code === 429) {
 					const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
 					ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } })
@@ -75,7 +66,7 @@ async function searchVideos(term, maxResults, locale) {
 	const searchResults = await ytsr(filter.url, options);
 	const videos = [];
 	searchResults.items
-		.filter(item => !item.isUpcoming && item.isLive)
+		// .filter(item => !item.isUpcoming && item.isLive) // disabled because locale
 		.forEach(item => {
 			const id = item.id;
 			const title = item.title;
@@ -178,8 +169,7 @@ function videosFromChannels(channelsId) {
 	});
 }
 
-exports.newStreamDownload = newStreamDownload;
-exports.newOldStreamDownload = newOldStreamDownload;
+exports.streamDownload = streamDownload;
 exports.getVideoAvailableForLive = getVideoAvailableForLive;
 exports.isVideoAvailableToLive = isVideoAvailableToLive;
 exports.searchVideos = searchVideos;

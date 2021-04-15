@@ -25,6 +25,5 @@ const socketIo = socketIO(server, {
 });
 configureLiveSockets(socketIo);
 
-// tests
-// const { newBufferedLive } = require("./google/transcribe/infinite-transcribe.service");
-// newBufferedLive({ liveId: 'fgfbbC4cJ4M', liveLanguage: { bcp: 'en-US' }, punctuation: false, profanityFilter: true }, 3333, () => { }, () => { });
+// const { startLive } = require('./live/live.service');
+// startLive({ liveId: 'fgfbbC4cJ4M', liveLanguage: { bcp: 'en-US' }, liveToLanguage: { code: 'pt'}, punctuation: false, profanityFilter: true }, 3333, () => { }, () => { });

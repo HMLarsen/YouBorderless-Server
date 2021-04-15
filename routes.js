@@ -41,7 +41,7 @@ function configureRoutes(app) {
 			}
 			res.sendStatus(404);
 		} catch (err) {
-			console.log(err);
+			console.log('[error "/live-available/:videoId"] - ' + err);
 			res.status(err.status_code || 500).send(err);
 		}
 	});
@@ -55,7 +55,7 @@ function configureRoutes(app) {
 			const videos = await searchVideos(term, maxResults, locale);
 			res.json(videos);
 		} catch (err) {
-			console.log(err);
+			console.log('[error "/search-lives"] - ' + err);
 			res.status(err.status_code || 500).send(err);
 		}
 	});
@@ -67,7 +67,7 @@ function configureRoutes(app) {
 			const videos = await videosFromChannels(channelsId);
 			res.json(videos);
 		} catch (err) {
-			console.log(err);
+			console.log('[error "/live-video-by-channels"] - ' + err);
 			res.status(err.status_code || 500).send(err);
 		}
 	});
