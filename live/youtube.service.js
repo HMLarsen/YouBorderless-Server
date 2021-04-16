@@ -13,7 +13,6 @@ const YOUTUBE_VIDEO_URL = 'https://www.youtube.com/watch?v=';
 function streamDownload(liveId, liveStartTime) {
 	return youtubeDlWrap.execStream([YOUTUBE_VIDEO_URL + liveId,
 		'-f', 'best',
-		'--youtube-skip-dash-manifest',
 		'--hls-use-mpegts',
 		'--ffmpeg-location', pathToFfmpeg]);
 }
@@ -30,10 +29,13 @@ function getVideoAvailableForLive(liveId) {
 		ytdl.getInfo(liveId)
 			.then(video => resolvePromise(video), err => {
 				console.error('[error ytdl.getInfo] - ' + JSON.stringify(err));
-				if (err.status === 429) {
+				if (err.statusCode === 429) {
 					const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
 					ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } })
-						.then(video => resolvePromise(video), err => reject(err));
+						.then(video => resolvePromise(video), err => {
+							console.error('[error ytdl.getInfo (cookies)] - ' + JSON.stringify(err));
+							reject(err);
+						});
 					return;
 				}
 				reject(err);
