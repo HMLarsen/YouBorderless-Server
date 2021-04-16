@@ -29,8 +29,8 @@ function getVideoAvailableForLive(liveId) {
 		}
 		ytdl.getInfo(liveId)
 			.then(video => resolvePromise(video), err => {
-				console.error('[error ytdl.getInfo] - ' + err);
-				if (err.indexOf('Status code') >= 0 && err.indexOf('429') >= 0) {
+				console.error('[error ytdl.getInfo] - ' + JSON.stringify(err));
+				if (err.status === 429) {
 					const cookie = 'GPS=1; YSC=frW1qTZ3Rlg; VISITOR_INFO1_LIVE=m2tDID6akN4; PREF=tz=America.Sao_Paulo';
 					ytdl.getInfo(liveId, { requestOptions: { Cookie: cookie } })
 						.then(video => resolvePromise(video), err => reject(err));
