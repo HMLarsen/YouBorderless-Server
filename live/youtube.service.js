@@ -1,7 +1,6 @@
 const axios = require('axios');
 const path = require('path');
 const pathToFfmpeg = require('ffmpeg-static');
-const ytdl = require('ytdl-core');
 const ytsr = require('ytsr');
 const YoutubeDlWrap = require('youtube-dl-wrap');
 
@@ -19,15 +18,14 @@ function streamDownload(liveId, liveStartTime) {
 
 function getVideoAvailableForLive(liveId) {
 	return new Promise((resolve, reject) => {
-		function resolvePromise(video) {
-			if (isVideoAvailableToLive(video.videoDetails)) {
-				resolve(video);
-				return;
-			}
-			resolve(undefined);
-		}
-		ytdl.getInfo(liveId)
-			.then(video => resolvePromise(video), err => reject(err));
+		youtubeDlWrap.getVideoInfo(YOUTUBE_VIDEO_URL + liveId)
+			.then(data => {
+				if (data.is_live) {
+					resolve(true);
+					return;
+				}
+				resolve(undefined);
+			}, err => resolve(undefined));
 	});
 }
 

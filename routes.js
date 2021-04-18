@@ -27,21 +27,16 @@ function configureRoutes(app) {
 	});
 
 	// video for living
-	app.get('/live-available/:videoId', async (req, res) => {
+	app.get('/live-available/:liveId', async (req, res) => {
 		try {
-			const videoAvailable = await getVideoAvailableForLive(req.params.videoId)
-				.catch(err => {
-					if (err.message?.indexOf('No video id found:') >= 0) {
-						throw { error: { statusCode: 404 } };
-					}
-				});
+			const videoAvailable = await getVideoAvailableForLive(req.params.liveId);
 			if (videoAvailable) {
 				res.status(200).send({ status: 'OK' });
 				return;
 			}
 			res.sendStatus(404);
 		} catch (err) {
-			console.log('[error "/live-available/:videoId"] - ' + err);
+			console.log('[error "/live-available/:liveId"] - ' + err);
 			res.status(err.statusCode || 500).send(err);
 		}
 	});
