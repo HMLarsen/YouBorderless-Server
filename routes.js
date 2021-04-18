@@ -32,7 +32,7 @@ function configureRoutes(app) {
 			const videoAvailable = await getVideoAvailableForLive(req.params.videoId)
 				.catch(err => {
 					if (err.message?.indexOf('No video id found:') >= 0) {
-						throw { error: { status_code: 404 } };
+						throw { error: { statusCode: 404 } };
 					}
 				});
 			if (videoAvailable) {
@@ -42,7 +42,7 @@ function configureRoutes(app) {
 			res.sendStatus(404);
 		} catch (err) {
 			console.log('[error "/live-available/:videoId"] - ' + err);
-			res.status(err.status_code || 500).send(err);
+			res.status(err.statusCode || 500).send(err);
 		}
 	});
 

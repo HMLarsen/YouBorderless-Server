@@ -6,7 +6,9 @@ const pathToFfmpeg = require('ffmpeg-static');
 const { streamDownload } = require('../../live/youtube.service.js');
 const { configureRequestToRecognize } = require('./transcribe-language.service.js');
 
-const streamingLimit = 290000;
+// maximum streaming limit should be 1/2 of SpeechAPI Streaming Limit.
+const STREAMING_LIMIT = 290000; // ~5 minutes.
+const TRANSCRIPTION_INTERVAL = 70;
 const client = new speech.SpeechClient();
 
 function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
@@ -23,17 +25,6 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 	let lastTranscriptWasFinal = false;
 
 	function startStream() {
-		const audioInputStreamTransform = new Writable({
-			write(chunk, encoding, next) {
-				writeChunks(chunk, next)
-			},
-			final() {
-				if (recognizeStream) {
-					recognizeStream.end();
-				}
-			}
-		});
-
 		audioInput = [];
 		const request = configureRequestToRecognize(liveOptions);
 
@@ -42,9 +33,11 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:44100', 'pipe:1']);
 		ffmpeg.stdout.on('data', chunk => writeChunks(chunk));
 
+		const _ = require('highland');
 		ytdlStream = streamDownload(liveOptions.liveId, liveStartTime);
 		ytdlStream.ffmpeg = ffmpeg;
-		ytdlStream
+		_(ytdlStream)
+			.ratelimit(1, 40)
 			//.on('youtubeDlEvent', (eventType, eventData) => console.log('[youtubeDlEvent] - ' + eventType, eventData))
 			.on('error', err => {
 				const data = { recognizeStream, ytdlStream };
@@ -57,8 +50,17 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 				console.log('end da stream do youtube');
 			})
 			.pipe(ffmpeg.stdin);
-		request.config.encoding = 'FLAC';
-		request.config.sampleRateHertz = 44100;
+
+		// const audioInputStreamTransform = new Writable({
+		// 	write(chunk, encoding, next) {
+		// 		writeChunks(chunk, next)
+		// 	},
+		// 	final() {
+		// 		if (recognizeStream) {
+		// 			recognizeStream.end();
+		// 		}
+		// 	}
+		// });
 
 		// const recorder = require('node-record-lpcm16');
 		// recorder
@@ -91,14 +93,14 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 			})
 			.on('data', speechCallback);
 
-		// // Restart stream when streamingLimit expires
-		// setTimeout(restartStream, streamingLimit);
+		// restart stream when streamingLimit expires
+		setTimeout(restartStream, STREAMING_LIMIT);
 	}
 
 	function writeChunks(chunk, next) {
 		if (newStream && lastAudioInput.length !== 0) {
 			// Approximate math to calculate time of chunks
-			const chunkTime = streamingLimit / lastAudioInput.length;
+			const chunkTime = STREAMING_LIMIT / lastAudioInput.length;
 			if (chunkTime !== 0) {
 				if (bridgingOffset < 0) {
 					bridgingOffset = 0;
@@ -142,7 +144,7 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 			Math.round(stream.results[0].resultEndTime.nanos / 1000000);
 
 		// Calculate correct time based on offset from audio sent twice
-		const correctedTime = resultEndTime - bridgingOffset + streamingLimit * restartCounter;
+		const correctedTime = resultEndTime - bridgingOffset + STREAMING_LIMIT * restartCounter;
 
 		let stdoutText = '';
 		if (stream.results[0] && stream.results[0].alternatives[0]) {
@@ -170,7 +172,6 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 		// });
 
 		concatenedOutput = stdoutText;
-		console.log('[' + isFinal + '] - ' + concatenedOutput);
 
 		if (isFinal) {
 			consumer({
@@ -185,7 +186,7 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 					text: concatenedOutput,
 					isFinal
 				});
-			}, 70);
+			}, TRANSCRIPTION_INTERVAL);
 		}
 
 		if (isFinal) {
@@ -219,7 +220,7 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 		if (!lastTranscriptWasFinal) {
 			process.stdout.write('\n');
 		}
-		console.log(`${streamingLimit * restartCounter}: RESTARTING REQUEST\n`);
+		console.log(`${STREAMING_LIMIT * restartCounter}: RESTARTING REQUEST\n`);
 
 		newStream = true;
 		startStream();

@@ -3,24 +3,33 @@ const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/trans
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');
 const { translateTextFree } = require('../google/translation/translation.service');
 
-function startLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
-	return newBufferedLive(liveOptions, liveStartTime, transcription => {
-		console.log('[transcrição] - [' + transcription.time + '] - ' + transcription.text);
+const TRANSLATION_INTERVAL = 80;
 
-		translateTextFree(liveOptions, transcription.text)
-			.then(translation => {
-				transcription.text = '';
-				translation.data.sentences.forEach(sentence => {
-					transcription.text += sentence.trans || '';
+function startLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
+	let timer;
+
+	return newBufferedLive(liveOptions, liveStartTime, transcription => {
+		if (timer) clearTimeout(timer);
+
+		//console.log('[transcrição] - [' + transcription.time + '] - ' + transcription.text);
+		// consumer(transcription);
+
+		timer = setTimeout(() => {
+			translateTextFree(liveOptions, transcription.text)
+				.then(translation => {
+					transcription.text = '';
+					translation.data.sentences.forEach(sentence => {
+						transcription.text += sentence.trans || '';
+					});
+					consumer(transcription);
+					//console.log('[tradução] - [' + transcription.time + '] - ' + transcription.text);
+				})
+				.catch(err => {
+					transcription.text = err;
+					consumer(transcription);
+					console.error('[transcrição error]: ' + err);
 				});
-				consumer(transcription);
-				console.log('[tradução] - [' + transcription.time + '] - ' + transcription.text);
-			})
-			.catch(err => {
-				transcription.text = err;
-				consumer(transcription);
-				console.error('[transcrição error]: ' + err);
-			});
+		}, TRANSLATION_INTERVAL);
 	}, refreshDataConsumer);
 }
 
