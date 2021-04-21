@@ -42,7 +42,7 @@ function startLive(socket, liveOptions, liveStartTime) {
 	console.log('[iniciada] live ' + liveOptions.id + ' para o socket ' + socket.id);
 }
 
-function stopLive(socket, id) {
+function stopLive(socket, id, isCallGc) {
 	let socketLives = socketStartedLives.get(socket.id);
 	if (!socketLives) {
 		emitError(socket, id, errorCodes.SOCKET_NO_LIVES);
@@ -53,7 +53,14 @@ function stopLive(socket, id) {
 		emitError(socket, id, errorCodes.LIVE_NOT_EXISTS);
 		return;
 	}
+
+	// destroy
 	liveServiceStopLive(bufferingLive.data);
+	bufferingLive.data.recognizeStream = null;
+	bufferingLive.data.ytdlStream = null;
+	bufferingLive.data = null;
+	if (isCallGc) callGc();
+
 	// remove from list and update current key in map
 	socketLives = socketLives.filter(currentLive => currentLive.id !== id);
 	socketStartedLives.set(socket.id, socketLives);
@@ -63,7 +70,7 @@ function stopLive(socket, id) {
 function stopAllLives(socket) {
 	const socketLives = socketStartedLives.get(socket.id);
 	if (socketLives) {
-		socketLives.forEach(live => stopLive(socket, live.id));
+		socketLives.forEach(live => stopLive(socket, live.id, false));
 	}
 }
 
@@ -77,11 +84,21 @@ function configureLiveSockets(socketIo) {
 		socket.on('disconnect', () => {
 			stopAllLives(socket);
 			socketStartedLives.delete(socket.id);
+			callGc();
 		});
 
 		socket.on('init-live', ({ liveOptions, liveStartTime }) => startLive(socket, liveOptions, liveStartTime));
-		socket.on('stop-live', liveId => stopLive(socket, liveId));
+		socket.on('stop-live', liveId => stopLive(socket, liveId, true));
 	});
+}
+
+function callGc() {
+	try {
+		if (global.gc) { console.log('called gc'); global.gc(); }
+	} catch (e) {
+		console.log('node --expose-gc index.js');
+		process.exit();
+	}
 }
 
 exports.configureLiveSockets = configureLiveSockets;
