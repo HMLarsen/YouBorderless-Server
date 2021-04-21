@@ -7,7 +7,8 @@ const { streamDownload } = require('../../live/youtube.service.js');
 const { configureRequestToRecognize } = require('./transcribe-language.service.js');
 
 // maximum streaming limit should be 1/2 of SpeechAPI Streaming Limit.
-const STREAMING_LIMIT = 290000; // ~5 minutes.
+//const STREAMING_LIMIT = 290000; // ~5 minutes.
+const STREAMING_LIMIT = 210000; // ~3 minutes and half.
 const TRANSCRIPTION_INTERVAL = 70;
 const client = new speech.SpeechClient();
 

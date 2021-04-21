@@ -30,6 +30,7 @@ function startLive(socket, liveOptions, liveStartTime) {
 			liveOptions.data = refreshData;
 			socketLives.push(liveOptions);
 			socketStartedLives.set(socket.id, socketLives);
+			callGc();
 		});
 
 	// add as init live in map
