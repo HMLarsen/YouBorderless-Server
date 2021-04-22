@@ -47,14 +47,14 @@ async function searchVideos(term, maxResults, locale) {
 	const options = { limit: maxResults };
 	if (locale) {
 		const splitLocale = locale.split('-');
-		options.hl = splitLocale[0]; // language code example "en"
+		options.hl = 'en'; // default 'en' because the attributes in response
 		if (splitLocale.length > 1) options.gl = splitLocale[1]; // country code example "US"
 	}
 
 	const searchResults = await ytsr(filter.url, options);
 	const videos = [];
 	searchResults.items
-		// .filter(item => !item.isUpcoming && item.isLive) // disabled because locale
+		.filter(item => !item.isUpcoming && item.isLive)
 		.forEach(item => {
 			const id = item.id;
 			const title = item.title;
