@@ -9,7 +9,7 @@ const youtubeDlPath = path.resolve('live/binaries/' + YTDL_BINARY_NAME);
 const youtubeDlWrap = new YoutubeDlWrap(youtubeDlPath);
 const YOUTUBE_VIDEO_URL = 'https://www.youtube.com/watch?v=';
 
-function streamDownload(liveId, liveStartTime) {
+function streamDownload(liveId) {
 	return youtubeDlWrap.execStream([YOUTUBE_VIDEO_URL + liveId,
 		'-f', 'best',
 		'--hls-use-mpegts',

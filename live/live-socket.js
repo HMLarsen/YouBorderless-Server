@@ -5,7 +5,7 @@ const { startLive: liveServiceStartLive, stopLive: liveServiceStopLive } = requi
 // value: lives array initialized by socket
 const socketStartedLives = new Map();
 
-function startLive(socket, liveOptions, liveStartTime) {
+function startLive(socket, liveOptions) {
 	// invalid parameters
 	if (!liveOptions || !liveOptions.id || !liveOptions.liveId) {
 		emitError(socket, liveOptions.id, errorCodes.INVALID_INIT_LIVE_PARAMS);
@@ -22,7 +22,7 @@ function startLive(socket, liveOptions, liveStartTime) {
 	}
 
 	// init live data
-	const data = liveServiceStartLive(liveOptions, liveStartTime,
+	const data = liveServiceStartLive(liveOptions,
 		data => socket.emit('live-captions', { id: liveOptions.id, data }),
 		refreshData => {
 			let socketLives = socketStartedLives.get(socket.id);
@@ -40,7 +40,7 @@ function startLive(socket, liveOptions, liveStartTime) {
 	liveOptions.data = data;
 	socketLives.push(liveOptions);
 	socketStartedLives.set(socket.id, socketLives);
-	console.log('[iniciada] live ' + liveOptions.id + ' para o socket ' + socket.id);
+	console.log('[início] transmissão ' + liveOptions.id + ' para o socket ' + socket.id);
 }
 
 function stopLive(socket, id, isCallGc) {
@@ -65,14 +65,19 @@ function stopLive(socket, id, isCallGc) {
 	// remove from list and update current key in map
 	socketLives = socketLives.filter(currentLive => currentLive.id !== id);
 	socketStartedLives.set(socket.id, socketLives);
-	console.log('[finalizada] live ' + id + ' para o socket ' + socket.id);
+	console.log('[fim] transmissão ' + id + ' para o socket ' + socket.id);
 }
 
 function stopAllLives(socket) {
+	let result = false;
 	const socketLives = socketStartedLives.get(socket.id);
 	if (socketLives) {
-		socketLives.forEach(live => stopLive(socket, live.id, false));
+		socketLives.forEach(live => {
+			stopLive(socket, live.id, false);
+			result = true;
+		});
 	}
+	return result;
 }
 
 function emitError(socket, liveId, message) {
@@ -83,21 +88,21 @@ function emitError(socket, liveId, message) {
 function configureLiveSockets(socketIo) {
 	socketIo.on('connection', socket => {
 		socket.on('disconnect', () => {
-			stopAllLives(socket);
+			const isCallGc = stopAllLives(socket);
 			socketStartedLives.delete(socket.id);
-			callGc();
+			if (isCallGc) callGc();
 		});
 
-		socket.on('init-live', ({ liveOptions, liveStartTime }) => startLive(socket, liveOptions, liveStartTime));
+		socket.on('init-live', (liveOptions) => startLive(socket, liveOptions));
 		socket.on('stop-live', liveId => stopLive(socket, liveId, true));
 	});
 }
 
 function callGc() {
 	try {
-		if (global.gc) { console.log('called gc'); global.gc(); }
+		if (global.gc) global.gc();
 	} catch (e) {
-		console.log('node --expose-gc index.js');
+		console.error(e);
 		process.exit();
 	}
 }

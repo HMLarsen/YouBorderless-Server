@@ -5,15 +5,11 @@ const { translateTextFree } = require('../google/translation/translation.service
 
 const TRANSLATION_INTERVAL = 80;
 
-function startLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
+function startLive(liveOptions, consumer, refreshDataConsumer) {
 	let timer;
 
-	return newBufferedLive(liveOptions, liveStartTime, transcription => {
+	return newBufferedLive(liveOptions, transcription => {
 		if (timer) clearTimeout(timer);
-
-		//console.log('[transcrição] - [' + transcription.time + '] - ' + transcription.text);
-		// consumer(transcription);
-
 		timer = setTimeout(() => {
 			translateTextFree(liveOptions, transcription.text)
 				.then(translation => {
@@ -22,12 +18,9 @@ function startLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
 						transcription.text += sentence.trans || '';
 					});
 					consumer(transcription);
-					//console.log('[tradução] - [' + transcription.time + '] - ' + transcription.text);
 				})
 				.catch(err => {
-					transcription.text = err;
-					consumer(transcription);
-					console.error('[transcrição error]: ' + err);
+					console.error('[tradução error]: ' + err);
 				});
 		}, TRANSLATION_INTERVAL);
 	}, refreshDataConsumer);

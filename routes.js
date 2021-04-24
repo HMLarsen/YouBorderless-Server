@@ -36,7 +36,7 @@ function configureRoutes(app) {
 			}
 			res.sendStatus(404);
 		} catch (err) {
-			console.log('[error "/live-available/:liveId"] - ' + err);
+			console.error('[error "/live-available/:liveId"] - ' + err);
 			res.status(err.statusCode || 500).send(err);
 		}
 	});
@@ -50,19 +50,19 @@ function configureRoutes(app) {
 			const videos = await searchVideos(term, maxResults, locale);
 			res.json(videos);
 		} catch (err) {
-			console.log('[error "/search-lives"] - ' + err);
+			console.error('[error "/search-lives"] - ' + err);
 			res.status(err.status_code || 500).send(err);
 		}
 	});
 
-	// live videos from subscriptions
-	app.post('/live-video-by-channels', async (req, res) => {
+	// broadcasts from subscriptions
+	app.post('/channels-broadcasts', async (req, res) => {
 		try {
 			const channelsId = req.body.channelsId;
 			const videos = await videosFromChannels(channelsId);
 			res.json(videos);
 		} catch (err) {
-			console.log('[error "/live-video-by-channels"] - ' + err);
+			console.error('[error "/channels-broadcasts"] - ' + err);
 			res.status(err.status_code || 500).send(err);
 		}
 	});

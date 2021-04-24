@@ -12,7 +12,7 @@ const STREAMING_LIMIT = 210000; // ~3 minutes and half.
 const TRANSCRIPTION_INTERVAL = 70;
 const client = new speech.SpeechClient();
 
-function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsumer) {
+function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 	let recognizeStream = null;
 	let ytdlStream = null;
 	let restartCounter = 0;
@@ -35,11 +35,10 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 		ffmpeg.stdout.on('data', chunk => writeChunks(chunk));
 
 		const _ = require('highland');
-		ytdlStream = streamDownload(liveOptions.liveId, liveStartTime);
+		ytdlStream = streamDownload(liveOptions.liveId);
 		ytdlStream.ffmpeg = ffmpeg;
 		_(ytdlStream)
 			.ratelimit(1, 40)
-			//.on('youtubeDlEvent', (eventType, eventData) => console.log('[youtubeDlEvent] - ' + eventType, eventData))
 			.on('error', err => {
 				const data = { recognizeStream, ytdlStream };
 				destroyBufferedLive(data);
@@ -48,7 +47,7 @@ function newBufferedLive(liveOptions, liveStartTime, consumer, refreshDataConsum
 			.on('close', () => {
 				const data = { recognizeStream, ytdlStream };
 				destroyBufferedLive(data);
-				console.log('end da stream do youtube');
+				console.log('transmissão do Youtube finalizada');
 			})
 			.pipe(ffmpeg.stdin);
 
@@ -256,14 +255,12 @@ function destroyBufferedLive(data) {
 			data.ytdlStream.youtubeDlProcess = null;
 		}
 		data.ytdlStream = null;
-		console.log('destroyed ytdl');
 	}
 	if (data.recognizeStream) {
 		if (!data.recognizeStream.destroyed) {
 			data.recognizeStream.destroy();
 		}
 		data.recognizeStream = null;
-		console.log('destroyed speech');
 	}
 }
 
