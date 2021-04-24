@@ -1,10 +1,10 @@
 {
-	"name": "you-borderless-back-end",
+	"name": "you-borderless-server",
 	"version": "0.0.0",
 	"license": "SEE LICENSE IN LICENSE",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HMLarsen/YouBorderless-Back-End"
+		"url": "https://github.com/HMLarsen/YouBorderless-Server"
 	},
 	"main": "index.js",
 	"engines": {
