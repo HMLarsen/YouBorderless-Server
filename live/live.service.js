@@ -3,7 +3,7 @@ const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/trans
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');
 const { translateTextFree } = require('../google/translation/translation.service');
 
-const TRANSLATION_INTERVAL = 80;
+const TRANSLATION_INTERVAL = 230;
 
 function startLive(liveOptions, consumer, refreshDataConsumer) {
 	let timer;

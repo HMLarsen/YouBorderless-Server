@@ -27,15 +27,18 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 
 	function startStream() {
 		audioInput = [];
-		const request = configureRequestToRecognize(liveOptions);
 		fastMode = liveOptions.fastMode;
 
-		// youtube download data
 		// convert to flac audio for best performance in google transcribe
-		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:44100', 'pipe:1']);
-		ffmpeg.stdout.on('data', chunk => writeChunks(chunk));
-
 		const _ = require('highland');
+
+		// ffmpeg converter youtube video to FLAC 24-bits 48khz
+		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:48000', 'pipe:1']);
+		_(ffmpeg.stdout)
+			.ratelimit(1, 250) // limit the chunks for best results
+			.on('data', chunk => writeChunks(chunk));
+
+		// youtube download data (binary video) to ffmpeg converter
 		ytdlStream = streamDownload(liveOptions.liveId);
 		ytdlStream.ffmpeg = ffmpeg;
 		_(ytdlStream)
@@ -53,6 +56,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 			.pipe(ffmpeg.stdin);
 
 		// Initiate (Reinitiate) a recognize stream
+		const request = configureRequestToRecognize(liveOptions);
 		recognizeStream = client
 			.streamingRecognize(request)
 			.on('error', err => {
@@ -70,7 +74,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		setTimeout(restartStream, STREAMING_LIMIT);
 	}
 
-	function writeChunks(chunk, next) {
+	function writeChunks(chunk) {
 		if (newStream && lastAudioInput.length !== 0) {
 			// Approximate math to calculate time of chunks
 			const chunkTime = STREAMING_LIMIT / lastAudioInput.length;
@@ -103,7 +107,6 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 			recognizeStream.write(chunk);
 		}
 		console.log('[buffer] - ' + chunk.length);
-		if (next) next();
 	}
 
 	let concatenedOutput;
