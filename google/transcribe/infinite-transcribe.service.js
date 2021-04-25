@@ -105,8 +105,8 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 
 		if (recognizeStream && !recognizeStream.destroyed) {
 			recognizeStream.write(chunk);
+			console.log('[buffer] - ' + chunk.length);
 		}
-		console.log('[buffer] - ' + chunk.length);
 	}
 
 	let concatenedOutput;
