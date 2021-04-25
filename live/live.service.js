@@ -19,9 +19,7 @@ function startLive(liveOptions, consumer, refreshDataConsumer) {
 					});
 					consumer(transcription);
 				})
-				.catch(err => {
-					console.error('[tradução error]: ' + err);
-				});
+				.catch(err => console.error('[tradução error]: ' + err));
 		}, TRANSLATION_INTERVAL);
 	}, refreshDataConsumer);
 }

@@ -202,10 +202,6 @@
       "name": "Khmer"
     },
     {
-      "code": "rw",
-      "name": "Kinyarwanda"
-    },
-    {
       "code": "ko",
       "name": "Korean"
     },
@@ -280,10 +276,6 @@
     {
       "code": "no",
       "name": "Norwegian"
-    },
-    {
-      "code": "or",
-      "name": "Odia (Oriya)"
     },
     {
       "code": "ps",
@@ -436,14 +428,6 @@
     {
       "code": "zu",
       "name": "Zulu"
-    },
-    {
-      "code": "he",
-      "name": "Hebrew"
-    },
-    {
-      "code": "zh",
-      "name": "Chinese (Simplified)"
     }
   ]
 }

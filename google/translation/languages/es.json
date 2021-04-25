@@ -226,10 +226,6 @@
       "name": "kazajo"
     },
     {
-      "code": "rw",
-      "name": "kinyarwanda"
-    },
-    {
       "code": "ky",
       "name": "kirguís"
     },
@@ -300,10 +296,6 @@
     {
       "code": "no",
       "name": "noruego"
-    },
-    {
-      "code": "or",
-      "name": "oriya"
     },
     {
       "code": "pa",
@@ -436,14 +428,6 @@
     {
       "code": "zu",
       "name": "zulú"
-    },
-    {
-      "code": "he",
-      "name": "hebreo"
-    },
-    {
-      "code": "zh",
-      "name": "chino (simplificado)"
     }
   ]
 }

@@ -26,17 +26,21 @@ async function getAvailableLanguages(languageCode) {
 	let languagesJson = JSON.parse(languagesFile);
 
 	try {
-		if (!languagesJson.expireDate || languagesJson.expireDate <= Date.now()) {
-			const languagesArray = await fetchData(languageCode);
-			const date = new Date();
-			date.setMonth(date.getMonth() + EXPIRED_CACHE);
-			const jsonData = {
-				expireDate: date.getTime(),
-				languages: languagesArray
-			};
-			fs.writeFileSync(languagesJsonFileName, JSON.stringify(jsonData, null, 2));
-			return jsonData.languages;
-		}
+		/**
+		 * get only languages supported by google-translate-open-api
+		 */
+
+		// if (!languagesJson.expireDate || languagesJson.expireDate <= Date.now()) {
+		// 	const languagesArray = await fetchData(languageCode);
+		// 	const date = new Date();
+		// 	date.setMonth(date.getMonth() + EXPIRED_CACHE);
+		// 	const jsonData = {
+		// 		expireDate: date.getTime(),
+		// 		languages: languagesArray
+		// 	};
+		// 	fs.writeFileSync(languagesJsonFileName, JSON.stringify(jsonData, null, 2));
+		// 	return jsonData.languages;
+		// }
 		return languagesJson.languages;
 	} catch (err) {
 		console.error(err);

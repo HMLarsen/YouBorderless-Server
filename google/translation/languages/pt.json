@@ -246,10 +246,6 @@
       "name": "Khmer"
     },
     {
-      "code": "rw",
-      "name": "Kinyarwanda"
-    },
-    {
       "code": "lo",
       "name": "Laosiano"
     },
@@ -308,10 +304,6 @@
     {
       "code": "no",
       "name": "Norueguês"
-    },
-    {
-      "code": "or",
-      "name": "Oriá"
     },
     {
       "code": "ps",
@@ -436,14 +428,6 @@
     {
       "code": "zu",
       "name": "Zulu"
-    },
-    {
-      "code": "he",
-      "name": "Hebraico"
-    },
-    {
-      "code": "zh",
-      "name": "Chinês (simplificado)"
     }
   ]
 }
