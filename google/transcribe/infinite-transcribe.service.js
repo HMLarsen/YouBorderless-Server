@@ -1,5 +1,4 @@
 const speech = require('@google-cloud/speech').v1p1beta1;
-const { Writable } = require('stream');
 const { spawn } = require('child_process');
 
 const pathToFfmpeg = require('ffmpeg-static');
@@ -7,9 +6,9 @@ const { streamDownload } = require('../../live/youtube.service.js');
 const { configureRequestToRecognize } = require('./transcribe-language.service.js');
 
 // maximum streaming limit should be 1/2 of SpeechAPI Streaming Limit.
-//const STREAMING_LIMIT = 290000; // ~5 minutes.
 const STREAMING_LIMIT = 210000; // ~3 minutes and half.
-const TRANSCRIPTION_INTERVAL = 70;
+const FAST_MODE_INTERVAL = 200;
+const SLOW_MODE_INTERVAL = 5000;
 const client = new speech.SpeechClient();
 
 function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
@@ -24,10 +23,12 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 	let newStream = true;
 	let bridgingOffset = 0;
 	let lastTranscriptWasFinal = false;
+	let fastMode = false;
 
 	function startStream() {
 		audioInput = [];
 		const request = configureRequestToRecognize(liveOptions);
+		fastMode = liveOptions.fastMode;
 
 		// youtube download data
 		// convert to flac audio for best performance in google transcribe
@@ -50,34 +51,6 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 				console.log('transmissão do Youtube finalizada');
 			})
 			.pipe(ffmpeg.stdin);
-
-		// const audioInputStreamTransform = new Writable({
-		// 	write(chunk, encoding, next) {
-		// 		writeChunks(chunk, next)
-		// 	},
-		// 	final() {
-		// 		if (recognizeStream) {
-		// 			recognizeStream.end();
-		// 		}
-		// 	}
-		// });
-
-		// const recorder = require('node-record-lpcm16');
-		// recorder
-		// 	.record({
-		// 		sampleRateHertz: 48000,
-		// 		threshold: 0, // Silence threshold
-		// 		silence: 1000,
-		// 		keepSilence: true,
-		// 		recordProgram: 'rec', // Try also "arecord" or "sox"
-		// 	})
-		// 	.stream()
-		// 	.on('error', err => {
-		// 		console.error('Audio recording error ' + err);
-		// 	})
-		// 	.pipe(audioInputStreamTransform);
-		// request.config.encoding = 'LINEAR16';
-		// request.config.sampleRateHertz = 16000;
 
 		// Initiate (Reinitiate) a recognize stream
 		recognizeStream = client
@@ -134,9 +107,10 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 	}
 
 	let concatenedOutput;
-	let timer;
+	let slowModeTimer = {};
+	let resultsTimer;
 	const speechCallback = stream => {
-		if (timer) clearTimeout(timer);
+		if (resultsTimer) clearTimeout(resultsTimer);
 
 		// Convert API result end time from seconds + nanoseconds to milliseconds
 		resultEndTime =
@@ -174,19 +148,37 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		concatenedOutput = stdoutText;
 
 		if (isFinal) {
+			if (slowModeTimer.timer) {
+				clearTimeout(slowModeTimer.timer);
+				slowModeTimer.timer = null;
+			}
 			consumer({
 				time: correctedTime,
 				text: concatenedOutput,
 				isFinal
 			});
-		} else {
-			timer = setTimeout(() => {
+		} else if (fastMode) {
+			resultsTimer = setTimeout(() => {
 				consumer({
 					time: correctedTime,
 					text: concatenedOutput,
 					isFinal
 				});
-			}, TRANSCRIPTION_INTERVAL);
+			}, FAST_MODE_INTERVAL);
+		} else {
+			if (!slowModeTimer.timer) {
+				slowModeTimer.timer = setTimeout(() => {
+					consumer({
+						time: slowModeTimer.correctedTime,
+						text: slowModeTimer.concatenedOutput,
+						isFinal: slowModeTimer.isFinal
+					});
+					slowModeTimer.timer = null;
+				}, SLOW_MODE_INTERVAL);
+			}
+			slowModeTimer.correctedTime = correctedTime;
+			slowModeTimer.concatenedOutput = concatenedOutput;
+			slowModeTimer.isFinal = isFinal;
 		}
 
 		if (isFinal) {
