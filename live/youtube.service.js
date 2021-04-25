@@ -21,7 +21,7 @@ function getVideoAvailableForLive(liveId) {
 		youtubeDlWrap.getVideoInfo(YOUTUBE_VIDEO_URL + liveId)
 			.then(data => {
 				if (data.is_live) {
-					resolve(true);
+					resolve(data);
 					return;
 				}
 				resolve(undefined);

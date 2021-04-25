@@ -31,7 +31,7 @@ function configureRoutes(app) {
 		try {
 			const videoAvailable = await getVideoAvailableForLive(req.params.liveId);
 			if (videoAvailable) {
-				res.status(200).send({ status: 'OK' });
+				res.status(200).send({ title: videoAvailable.title });
 				return;
 			}
 			res.sendStatus(404);
