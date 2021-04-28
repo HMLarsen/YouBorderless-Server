@@ -42,7 +42,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		ytdlStream = streamDownload(liveOptions.liveId);
 		ytdlStream.ffmpeg = ffmpeg;
 		_(ytdlStream)
-			.ratelimit(1, 40)
+			.ratelimit(1, 40) // limit the download rate
 			.on('error', err => {
 				const data = { recognizeStream, ytdlStream };
 				destroyBufferedLive(data);
