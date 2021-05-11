@@ -105,7 +105,6 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 
 		if (recognizeStream && !recognizeStream.destroyed) {
 			recognizeStream.write(chunk);
-			console.log('[buffer] - ' + chunk.length);
 		}
 	}
 
@@ -129,25 +128,6 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		}
 
 		const isFinal = stream.results[0].isFinal;
-
-		// stream.results.forEach(result => {
-		// 	console.log(`Transcription: ${result.alternatives[0].transcript}`);
-		// 	result.alternatives[0].words.forEach(wordInfo => {
-		// 		// NOTE: If you have a time offset exceeding 2^32 seconds, use the
-		// 		// wordInfo.{x}Time.seconds.high to calculate seconds.
-		// 		const startSecs =
-		// 			`${wordInfo.startTime.seconds}` +
-		// 			'.' +
-		// 			wordInfo.startTime.nanos / 100000000;
-		// 		const endSecs =
-		// 			`${wordInfo.endTime.seconds}` +
-		// 			'.' +
-		// 			wordInfo.endTime.nanos / 100000000;
-		// 		console.log(`Word: ${wordInfo.word}`);
-		// 		console.log(`\t ${startSecs} secs - ${endSecs} secs`);
-		// 	});
-		// });
-
 		concatenedOutput = stdoutText;
 
 		if (isFinal) {
