@@ -32,8 +32,8 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		// convert to flac audio for best performance in google transcribe
 		const _ = require('highland');
 
-		// ffmpeg converter youtube video to FLAC 24-bits 16khz
-		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:16000', 'pipe:1']);
+		// ffmpeg converter youtube video to FLAC 24-bits 48khz
+		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:48000', 'pipe:1']);
 		_(ffmpeg.stdout)
 			.ratelimit(1, 250) // limit the chunks for best results
 			.on('data', chunk => writeChunks(chunk));
