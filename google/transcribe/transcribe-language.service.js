@@ -79,7 +79,7 @@ function configureRequestToRecognize(liveOptions) {
 	const request = {
 		config: {
 			encoding: 'FLAC', // optional field for FLAC or WAV files because it is in the header
-			sampleRateHertz: 48000, // optional field for FLAC or WAV files because it is in the header
+			sampleRateHertz: 16000, // optional field for FLAC or WAV files because it is in the header
 			languageCode: liveOptions.liveLanguage.bcp,
 			useEnhanced: true, // if true and the model does not support, api changes to standard version of the specified model
 			enableAutomaticPunctuation: !!liveOptions.punctuation,
