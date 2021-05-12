@@ -24,6 +24,3 @@ const socketIo = socketIO(server, {
 	allowEIO3: true
 });
 configureLiveSockets(socketIo);
-
-// const { startLive } = require('./live/live.service');
-// startLive({ liveId: 'fgfbbC4cJ4M', liveLanguage: { bcp: 'en-US' }, liveToLanguage: { code: 'pt'}, punctuation: false, profanityFilter: true }, 3333, () => { }, () => { });
