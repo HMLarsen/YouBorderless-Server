@@ -62,7 +62,7 @@ function configureRoutes(app) {
 			const videos = await videosFromChannels(channelsId);
 			res.json(videos);
 		} catch (err) {
-			console.error('[error "/channels-broadcasts"] - ' + err);
+			console.error('[error "/channels-broadcasts"] - ' + JSON.stringify(err));
 			res.status(err.status_code || 500).send(err);
 		}
 	});
