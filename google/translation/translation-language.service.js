@@ -1,7 +1,4 @@
 const fs = require('fs');
-const { Translate } = require('@google-cloud/translate').v2;
-
-const translate = new Translate();
 
 async function fetchData(languageCode) {
 	switch (languageCode) {
@@ -12,6 +9,8 @@ async function fetchData(languageCode) {
 		default:
 			break;
 	}
+	const { Translate } = require('@google-cloud/translate').v2;
+	const translate = new Translate();
 	const [languages] = await translate.getLanguages(languageCode);
 	return languages;
 }
