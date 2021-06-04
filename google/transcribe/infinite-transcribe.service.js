@@ -1,5 +1,6 @@
 const speech = require('@google-cloud/speech').v1p1beta1;
 const { spawn } = require('child_process');
+const highland = require('highland');
 
 const pathToFfmpeg = require('ffmpeg-static');
 const { streamDownload } = require('../../live/youtube.service.js');
@@ -30,18 +31,19 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		fastMode = liveOptions.fastMode;
 
 		// convert to flac audio for best performance in google transcribe
-		const _ = require('highland');
-
 		// ffmpeg converter youtube video to FLAC 24-bits 48khz
-		const ffmpeg = spawn(pathToFfmpeg, ['-i', 'pipe:0', '-f', 'flac', '-ac', '1', '-af', 'aformat=s32:48000', 'pipe:1']);
-		_(ffmpeg.stdout)
+		const ffmpeg = spawn(pathToFfmpeg, [
+			'-i', 'pipe:0', '-f', 'flac', '-ac', '1',
+			'-af', 'aformat=s32:48000', 'pipe:1'
+		]);
+		highland(ffmpeg.stdout)
 			.ratelimit(1, 250) // limit the chunks for best results
 			.on('data', chunk => writeChunks(chunk));
 
 		// youtube download data (binary video) to ffmpeg converter
 		ytdlStream = streamDownload(liveOptions.liveId);
 		ytdlStream.ffmpeg = ffmpeg;
-		_(ytdlStream)
+		highland(ytdlStream)
 			.ratelimit(1, 40) // limit the download rate
 			.on('error', err => {
 				const data = { recognizeStream, ytdlStream };
@@ -115,8 +117,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 		if (resultsTimer) clearTimeout(resultsTimer);
 
 		// Convert API result end time from seconds + nanoseconds to milliseconds
-		resultEndTime =
-			stream.results[0].resultEndTime.seconds * 1000 +
+		resultEndTime = stream.results[0].resultEndTime.seconds * 1000 +
 			Math.round(stream.results[0].resultEndTime.nanos / 1000000);
 
 		// Calculate correct time based on offset from audio sent twice
@@ -142,11 +143,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 			});
 		} else if (fastMode) {
 			resultsTimer = setTimeout(() => {
-				consumer({
-					time: correctedTime,
-					text: concatenedOutput,
-					isFinal
-				});
+				consumer({ time: correctedTime, text: concatenedOutput, isFinal });
 			}, FAST_MODE_INTERVAL);
 		} else {
 			if (!slowModeTimer.timer) {
@@ -154,8 +151,7 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 					consumer({
 						time: slowModeTimer.correctedTime,
 						text: slowModeTimer.concatenedOutput,
-						isFinal: slowModeTimer.isFinal
-					});
+						isFinal: slowModeTimer.isFinal });
 					slowModeTimer.timer = null;
 				}, SLOW_MODE_INTERVAL);
 			}
@@ -163,7 +159,6 @@ function newBufferedLive(liveOptions, consumer, refreshDataConsumer) {
 			slowModeTimer.concatenedOutput = concatenedOutput;
 			slowModeTimer.isFinal = isFinal;
 		}
-
 		if (isFinal) {
 			isFinalEndTime = resultEndTime;
 			lastTranscriptWasFinal = true;

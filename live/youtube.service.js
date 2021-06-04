@@ -42,7 +42,7 @@ function isVideoAvailableToLive(videoDetails) {
 
 async function searchVideos(term, maxResults, locale) {
 	const filters = await ytsr.getFilters(term);
-	const filter = filters.get('Features').get('Live'); // default en-US locale for get the filters
+	const filter = filters.get('Features').get('Live'); // default en-US locale to get filters
 
 	const options = { limit: maxResults };
 	if (locale) {

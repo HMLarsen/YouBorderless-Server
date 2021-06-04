@@ -1,7 +1,7 @@
 const { newBufferedLive, destroyBufferedLive } = require('../google/transcribe/infinite-transcribe.service');
 const { getAvailableLanguages: getTranscribeAvbLang } = require('../google/transcribe/transcribe-language.service');
 const { getAvailableLanguages: getTranslationAvbLang } = require('../google/translation/translation-language.service');
-const { translateTextFree } = require('../google/translation/translation.service');
+const { translateText } = require('../google/translation/translation.service');
 
 const TRANSLATION_INTERVAL = 230;
 
@@ -11,7 +11,7 @@ function startLive(liveOptions, consumer, refreshDataConsumer) {
 	return newBufferedLive(liveOptions, transcription => {
 		if (timer) clearTimeout(timer);
 		timer = setTimeout(() => {
-			translateTextFree(liveOptions, transcription.text)
+			translateText(liveOptions, transcription.text)
 				.then(translation => {
 					transcription.text = '';
 					translation.data.sentences.forEach(sentence => {

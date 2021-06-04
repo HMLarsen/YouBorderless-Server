@@ -1,6 +1,6 @@
 const translate = require('google-translate-open-api').default;
 
-function translateTextFree(liveOptions, text) {
+function translateText(liveOptions, text) {
 	return translate(text, {
 		client: 'dict-chrome-ex',
 		to: liveOptions.liveToLanguage.code,
@@ -10,4 +10,4 @@ function translateTextFree(liveOptions, text) {
 	});
 }
 
-exports.translateTextFree = translateTextFree;
+exports.translateText = translateText;
