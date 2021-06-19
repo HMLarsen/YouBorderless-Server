@@ -70,9 +70,11 @@ async function searchVideos(term, maxResults, locale) {
 
 function videosFromChannels(channelsId) {
 	return new Promise((resolve, reject) => {
-		const fetches = channelsId.map(channelId => axios.get(`https://www.youtube.com/channel/${channelId}/live`, {
-			timeout: 1000 * 5, // wait for 5 seconds
-		}));
+		const fetches = channelsId.map(channelId => {
+			return axios.get(`https://www.youtube.com/channel/${channelId}/live`, {
+				timeout: 1000 * 5, // wait for 5 seconds
+			});
+		});
 		const promisesResolved = fetches.map(promise => promise.catch(error => ({ error })))
 
 		function checkFailed(then) {
